@@ -41,6 +41,7 @@
             this.pic_TheCard = new System.Windows.Forms.PictureBox();
             this.pnl_EnemyCard1 = new System.Windows.Forms.Panel();
             this.pnl_PlayerCard = new System.Windows.Forms.Panel();
+            this.pnl_RulesAndCredit = new System.Windows.Forms.Panel();
             this.pnl_MainMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_UnoPicture)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_MenuPic)).BeginInit();
@@ -65,7 +66,7 @@
             this.pnl_MainMenu.Location = new System.Drawing.Point(0, 0);
             this.pnl_MainMenu.Name = "pnl_MainMenu";
             this.pnl_MainMenu.Padding = new System.Windows.Forms.Padding(0, 20, 10, 0);
-            this.pnl_MainMenu.Size = new System.Drawing.Size(782, 449);
+            this.pnl_MainMenu.Size = new System.Drawing.Size(761, 449);
             this.pnl_MainMenu.TabIndex = 0;
             // 
             // pic_UnoPicture
@@ -75,7 +76,7 @@
             this.pic_UnoPicture.Image = global::ALP_UNO_Game.Properties.Resources.uno_logo;
             this.pic_UnoPicture.Location = new System.Drawing.Point(406, 20);
             this.pic_UnoPicture.Name = "pic_UnoPicture";
-            this.pic_UnoPicture.Size = new System.Drawing.Size(366, 240);
+            this.pic_UnoPicture.Size = new System.Drawing.Size(345, 240);
             this.pic_UnoPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pic_UnoPicture.TabIndex = 4;
             this.pic_UnoPicture.TabStop = false;
@@ -146,7 +147,7 @@
             this.pnl_GamePanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnl_GamePanel.Location = new System.Drawing.Point(0, 449);
             this.pnl_GamePanel.Name = "pnl_GamePanel";
-            this.pnl_GamePanel.Size = new System.Drawing.Size(782, 449);
+            this.pnl_GamePanel.Size = new System.Drawing.Size(761, 449);
             this.pnl_GamePanel.TabIndex = 1;
             this.pnl_GamePanel.Visible = false;
             // 
@@ -189,7 +190,7 @@
             this.pnl_EnemyCard1.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnl_EnemyCard1.Location = new System.Drawing.Point(0, 0);
             this.pnl_EnemyCard1.Name = "pnl_EnemyCard1";
-            this.pnl_EnemyCard1.Size = new System.Drawing.Size(782, 102);
+            this.pnl_EnemyCard1.Size = new System.Drawing.Size(761, 102);
             this.pnl_EnemyCard1.TabIndex = 1;
             // 
             // pnl_PlayerCard
@@ -198,14 +199,27 @@
             this.pnl_PlayerCard.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.pnl_PlayerCard.Location = new System.Drawing.Point(0, 274);
             this.pnl_PlayerCard.Name = "pnl_PlayerCard";
-            this.pnl_PlayerCard.Size = new System.Drawing.Size(782, 175);
+            this.pnl_PlayerCard.Size = new System.Drawing.Size(761, 175);
             this.pnl_PlayerCard.TabIndex = 0;
+            // 
+            // pnl_RulesAndCredit
+            // 
+            this.pnl_RulesAndCredit.BackgroundImage = global::ALP_UNO_Game.Properties.Resources.background;
+            this.pnl_RulesAndCredit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pnl_RulesAndCredit.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnl_RulesAndCredit.Location = new System.Drawing.Point(0, 898);
+            this.pnl_RulesAndCredit.Name = "pnl_RulesAndCredit";
+            this.pnl_RulesAndCredit.Size = new System.Drawing.Size(761, 449);
+            this.pnl_RulesAndCredit.TabIndex = 2;
+            this.pnl_RulesAndCredit.Visible = false;
             // 
             // Game
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(782, 922);
+            this.AutoScroll = true;
+            this.ClientSize = new System.Drawing.Size(782, 1008);
+            this.Controls.Add(this.pnl_RulesAndCredit);
             this.Controls.Add(this.pnl_GamePanel);
             this.Controls.Add(this.pnl_MainMenu);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -230,7 +244,6 @@
         #endregion
 
         private System.Windows.Forms.Panel pnl_MainMenu;
-        private System.Windows.Forms.Panel pnl_GamePanel;
         private System.Windows.Forms.PictureBox btn_RulesButton;
         private System.Windows.Forms.PictureBox btn_CreditsButton;
         private System.Windows.Forms.PictureBox btn_StartButton;
@@ -241,6 +254,8 @@
         private System.Windows.Forms.PictureBox pic_TheCard;
         private System.Windows.Forms.PictureBox pic_CardDeck;
         private System.Windows.Forms.Label lbl_CardDeckCount;
+        private System.Windows.Forms.Panel pnl_GamePanel;
+        private System.Windows.Forms.Panel pnl_RulesAndCredit;
     }
 }
 
