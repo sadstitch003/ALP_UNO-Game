@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Media;
 
 namespace ALP_UNO_Game
 {
@@ -114,6 +115,9 @@ namespace ALP_UNO_Game
             cardDeck = cardDeck.OrderBy(x => rand.Next()).ToList();
             cardDeck = cardDeck.OrderBy(x => rand.Next()).ToList();
             cardDeck = cardDeck.OrderBy(x => rand.Next()).ToList();
+            cardDeck = cardDeck.OrderBy(x => rand.Next()).ToList();
+            cardDeck = cardDeck.OrderBy(x => rand.Next()).ToList();
+            cardDeck = cardDeck.OrderBy(x => rand.Next()).ToList();
         }
 
         public void drawPlayerCard(int playerCount, int cardCount)
@@ -172,20 +176,37 @@ namespace ALP_UNO_Game
             showPlayerCard();
             showEnemyCard();
 
+
+            playerDrawCard = false;
             if (playerCannotPlay(playerList[playerNum].playerCards, theCard))
             {
                 if (cardDeck.Count() == 0)
                 {
                     gameOver = true;
-                    // >> Gameover Panel
+                    endTurn();
                 } 
                 else
                 {
                     MessageBox.Show($"Player {playerNum + 1} doesn't have a playable card, Draw 1 card !");
                     drawCard(playerList[playerNum].playerCards, 1);
-                    // Kalo kartu diambil bisa dimainin bisa di mainkan.
+                    playerDrawCard = true;
+
+                    if (playerList[playerNum].playerCards[playerList[playerNum].playerCards.Count() - 1].cardColor == "wild" || playerList[playerNum].playerCards[playerList[playerNum].playerCards.Count() - 1].cardColor == theCard.cardColor || playerList[playerNum].playerCards[playerList[playerNum].playerCards.Count() - 1].cardValue == theCard.cardValue)
+                    {
+                        playCard Form = new playCard(playerList[playerNum].playerCards[playerList[playerNum].playerCards.Count() - 1].cardName);
+                        Form.ShowDialog();
+
+                        bool yesButtonClicked = Form.buttonClicked;
+                        if (yesButtonClicked)
+                        {
+                            theCard = playerList[playerNum].playerCards[playerList[playerNum].playerCards.Count() - 1];
+                            playerList[playerNum].playerCards.RemoveAt(playerList[playerNum].playerCards.Count() - 1);
+                            playerDrawCard = false;
+                        }
+                    }
                     sortPlayerCard();
-                    updateCard(theCard);
+                    showPlayerCard();
+                    updateCard();
                     endTurn();
                 }
             }
@@ -198,7 +219,7 @@ namespace ALP_UNO_Game
             drawPlayerCard(playerCount, cardCount);
 
             theCard = getCard();
-            updateCard(theCard);
+            updateCard();
 
             playGame();
         }
@@ -207,53 +228,130 @@ namespace ALP_UNO_Game
         {
             if (playerList.Count() == 2)
             {
-                return true;
+                if (playerList[playerNum].playerCards.Count() == 0)
+                {
+                    return true;
+                }
+                else return gameOver;
             }
             else return gameOver;
         }
+
+        public bool playerDrawCard = false;
 
         public void endTurn()
         {
             gameOver = checkGameStatus();
             if (gameOver)
             {
+                string winner = "";
+                int cardCount = 0;
+                int score = 0;
+                for (int i = 0; i < playerList.Count(); i++)
+                {
+                    if (playerList[i].playerCards.Count() <= cardCount)
+                    {
+                        winner = $"Winner : Player {i + 1}";
 
-            }
-            else if (theCard.cardValue == "skip")
-            {
-                playerNum++;
-            }
-            else if (theCard.cardValue == "reverse")
-            {
-                playDirection *= -1;
-            }
-            else if (theCard.cardValue == "drawTwo")
-            {
-                drawCard(playerList[(playerNum + playDirection) % playerList.Count()].playerCards, 2);
-                MessageBox.Show($"Player {(playerNum + playDirection) % playerList.Count() + 1} : Draw Two Cards, Skip turn !");
-                showPlayerCard();
-                showEnemyCard();
-                updateCard(theCard);
-                playerNum++;
-            }
-            else if (theCard.cardValue == "drawFour")
-            {
-                drawCard(playerList[(playerNum + playDirection) % playerList.Count()].playerCards, 4);
-                MessageBox.Show($"Player {(playerNum + playDirection) % playerList.Count() + 1} : Draw Four Cards, Skip turn !");
-                showPlayerCard();
-                showEnemyCard();
-                updateCard(theCard);
-                playerNum++;
-            }
-            
-            if (theCard.cardColor == "wild")
-            {
+                        for (int j = 0; j < playerList.Count(); j++)
+                        {
+                            if (j == i) continue;
+                            foreach (var card in playerList[j].playerCards)
+                                score += card.score;
+                        }
+                    }
+                }
 
+                lbl_Winner.Text = winner;
+                lbl_Score.Text = $"Score : {score}";
+                pnl_GamePanel.Visible = false;
+                pnl_GameOver.Visible = true;
             }
+            else
+            {
+                if (playerDrawCard)
+                {
+                    // SKIP
+                }
+                else if (theCard.cardValue == "skip")
+                {
+                    playerNum += playDirection;
+                    if (playerNum < 0) playerNum = playerList.Count() - 1;
+                    else if (playerNum >= playerList.Count()) playerNum = 0;
+                }
+                else if (theCard.cardValue == "reverse")
+                {
+                    playDirection *= -1;
+                    if (playerList.Count() == 2) playerNum += playDirection;
+                    if (playerNum < 0) playerNum = playerList.Count() - 1;
+                    else if (playerNum >= playerList.Count()) playerNum = 0;
+                }
+                else if (theCard.cardValue == "drawTwo")
+                {
+                    int tempPlayerNum = playerNum + 1;
+                    if (tempPlayerNum < 0) tempPlayerNum = playerList.Count() - 1;
+                    else if (tempPlayerNum >= playerList.Count()) tempPlayerNum = 0;
 
-            playerNum = (playerNum + playDirection) % playerList.Count();
-            playGame();
-            
+                    drawCard(playerList[tempPlayerNum].playerCards, 2);
+                    MessageBox.Show($"Player {tempPlayerNum + 1} : Draw Two Cards, Skip turn !");
+                    showPlayerCard();
+                    showEnemyCard();
+                    updateCard();
+
+                    playerNum += playDirection;
+                    if (playerNum < 0) playerNum = playerList.Count() - 1;
+                    else if (playerNum >= playerList.Count()) playerNum = 0;
+                }
+                else if (theCard.cardValue == "drawFour")
+                {
+                    int tempPlayerNum = playerNum + 1;
+                    if (tempPlayerNum < 0) tempPlayerNum = playerList.Count() - 1;
+                    else if (tempPlayerNum >= playerList.Count()) tempPlayerNum = 0;
+
+                    drawCard(playerList[tempPlayerNum].playerCards, 4);
+                    MessageBox.Show($"Player {tempPlayerNum + 1} : Draw Four Cards, Skip turn !");
+                    showPlayerCard();
+                    showEnemyCard();
+                    updateCard();
+
+                    playerNum += playDirection;
+                    if (playerNum < 0) playerNum = playerList.Count() - 1;
+                    else if (playerNum >= playerList.Count()) playerNum = 0;
+                }
+
+                if (theCard.cardColor == "wild")
+                {
+                    colorPicker form = new colorPicker();
+                    form.ShowDialog();
+                    string warnaPilih = colorPicker.warna;
+
+                    if (warnaPilih == "red")
+                    {
+                        theCard.cardColor = "red";
+                    }
+                    else if (warnaPilih == "blue")
+                    {
+                        theCard.cardColor = "blue";
+                    }
+                    else if (warnaPilih == "yellow")
+                    {
+                        theCard.cardColor = "yellow";
+                    }
+                    else if (warnaPilih == "green")
+                    {
+                        theCard.cardColor = "green";
+                    }
+
+                    theCard.cardName = $"{theCard.cardColor}_{theCard.cardValue}";
+                    updateCard();
+                }
+
+                playerNum += playDirection;
+                if (playerNum < 0) playerNum = playerList.Count() - 1;
+                else if (playerNum >= playerList.Count()) playerNum = 0;
+
+                playGame();
+            }
         }
 
         #endregion
@@ -268,9 +366,19 @@ namespace ALP_UNO_Game
             this.btn_CreditsButton.Location = new System.Drawing.Point(this.ClientSize.Width * 3 / 4 - this.btn_StartButton.Width / 2, this.ClientSize.Height / 2 + this.btn_StartButton.Height * 3);
         }
 
+        private SoundPlayer soundPlayer = new SoundPlayer();
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (PlayButton.Checked) soundPlayer.Play();
+            else soundPlayer.Stop();
+        }
+
         private void Game_Load(object sender, EventArgs e)
         {
             this.ClientSize = new System.Drawing.Size(800, 450);
+            soundPlayer.SoundLocation = "uno_music.wav";
+            soundPlayer.Play();
 
             // Main menu panel
             this.pnl_MainMenu.Height = this.ClientSize.Height;
@@ -288,18 +396,30 @@ namespace ALP_UNO_Game
             this.pic_CardDeck.Size = new System.Drawing.Size(this.ClientSize.Width / 10, this.ClientSize.Height / 4);
             this.lbl_CardDeckCount.Location = new System.Drawing.Point((this.ClientSize.Width - this.ClientSize.Width / 4) / 2 + (this.ClientSize.Width / 60), (this.ClientSize.Height - this.ClientSize.Height / 3) / 2 + (this.ClientSize.Height / 4));
             this.lbl_CardDeckCount.Font = new System.Drawing.Font("Microsoft Sans Serif", (float)(this.ClientSize.Width / 100), System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+
+            // Game Over Panel
+            this.pnl_GameOver.Size = this.ClientSize;
+            this.btn_PlayAgain.Size = new System.Drawing.Size(this.ClientSize.Width / 3, this.ClientSize.Height / 10);
+            this.btn_PlayAgain.Location = new System.Drawing.Point((this.ClientSize.Width - this.btn_PlayAgain.Width) / 2, this.ClientSize.Height / 2 + this.btn_StartButton.Height * 2 + 20);
+            this.lbl_Winner.Location = new System.Drawing.Point(this.ClientSize.Width / 2 - 20, this.ClientSize.Height / 2 + this.ClientSize.Height / 10);
+            this.lbl_Winner.Font = new System.Drawing.Font("Microsoft Sans Serif", (float)(this.ClientSize.Width / 100), System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Score.Location = new System.Drawing.Point(this.ClientSize.Width / 2 - 20, this.ClientSize.Height / 2 + this.ClientSize.Height / 10 + 20);
+            this.lbl_Score.Font = new System.Drawing.Font("Microsoft Sans Serif", (float)(this.ClientSize.Width / 100), System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
         }
+
+
 
         private void Game_SizeChanged(object sender, EventArgs e)
         {
-            if(pnl_MainMenu.Visible == true)
+            if (pnl_MainMenu.Visible)
             {
+                PlayButton.Size = new System.Drawing.Size(this.ClientSize.Height / 10, this.ClientSize.Height / 10);
                 this.pnl_MainMenu.Height = this.ClientSize.Height;
                 this.pic_MenuPic.Width = this.ClientSize.Width / 2;
                 this.pic_UnoPicture.Height = this.ClientSize.Height / 2;
                 resetButtonSetting();
             }
-            else if (pnl_GamePanel.Visible == true)
+            else if (pnl_GamePanel.Visible)
             {
                 this.pnl_GamePanel.Height = this.ClientSize.Height;
                 this.pnl_PlayerCard.Height = this.ClientSize.Height / 3;
@@ -311,6 +431,16 @@ namespace ALP_UNO_Game
                 this.lbl_CardDeckCount.Location = new System.Drawing.Point((this.ClientSize.Width - this.ClientSize.Width / 4) / 2 + (this.ClientSize.Width / 50), (this.ClientSize.Height - this.ClientSize.Height / 3) / 2 + (this.ClientSize.Height / 4));
                 this.lbl_CardDeckCount.Font = new System.Drawing.Font("Microsoft Sans Serif", (float)(this.ClientSize.Width / 100), System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
                 resetCardSetting();
+            }
+            else if (pnl_GameOver.Visible)
+            {
+                this.pnl_GameOver.Size = this.ClientSize;
+                this.btn_PlayAgain.Size = new System.Drawing.Size(this.ClientSize.Width / 3, this.ClientSize.Height / 10);
+                this.btn_PlayAgain.Location = new System.Drawing.Point((this.ClientSize.Width - this.btn_PlayAgain.Width) / 2, this.ClientSize.Height / 2 + this.btn_StartButton.Height * 2 + 20);
+                this.lbl_Winner.Location = new System.Drawing.Point(this.ClientSize.Width / 2 - 20, this.ClientSize.Height / 2 + this.ClientSize.Height / 10);
+                this.lbl_Winner.Font = new System.Drawing.Font("Microsoft Sans Serif", (float)(this.ClientSize.Width / 100), System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                this.lbl_Score.Location = new System.Drawing.Point(this.ClientSize.Width / 2 - 20, this.ClientSize.Height / 2 + this.ClientSize.Height / 10 + 20);
+                this.lbl_Score.Font = new System.Drawing.Font("Microsoft Sans Serif", (float)(this.ClientSize.Width / 100), System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             }
         }
 
@@ -330,7 +460,8 @@ namespace ALP_UNO_Game
             int playerCount = 2;
             int cardCount = 7;
             //
-            pnl_GamePanel.Visible = true;
+            //pnl_GamePanel.Visible = true;
+            pnl_GameOver.Visible = true;
             StartGame(playerCount, cardCount);
         }
 
@@ -353,7 +484,7 @@ namespace ALP_UNO_Game
 
             for (int i = 0; i < pictureBoxes2.Count(); i++)
             {
-                pictureBoxes2[i].Location = new Point((this.ClientSize.Width - (this.ClientSize.Width / 16)) / 2 + ((playerList[playerNum].playerCards.Count() / 2) - i) * this.ClientSize.Width / 50, 0);
+                pictureBoxes2[i].Location = new Point((this.ClientSize.Width - (this.ClientSize.Width / 16)) / 2 + ((playerList[playerNum].playerCards.Count() / 2) - i) * this.ClientSize.Width / 50, 20);
                 pictureBoxes2[i].Size = new System.Drawing.Size(this.ClientSize.Width / 20, this.ClientSize.Height / 8);
             }
         }
@@ -387,7 +518,7 @@ namespace ALP_UNO_Game
                     if (playerList[playerNum].playerCards[i].cardName == pictureBox.Name)
                         {
                             theCard = playerList[playerNum].playerCards[i];
-                            updateCard(theCard);
+                            updateCard();
 
                             playerList[playerNum].playerCards.RemoveAt(i);
                             sortPlayerCard();
@@ -428,7 +559,7 @@ namespace ALP_UNO_Game
 
         public void showEnemyCard()
         {
-            if(playerList.Count() == 2)
+            if (playerList.Count() == 2)
             {
                 for (int i = 0; i < pictureBoxes2.Count(); i++)
                     this.pnl_EnemyCard1.Controls.Remove(pictureBoxes2[i]);
@@ -442,7 +573,7 @@ namespace ALP_UNO_Game
                     {
                         Name = playerList[enemyIndex].playerCards[i].cardName,
                         Size = new System.Drawing.Size(this.ClientSize.Width / 20, this.ClientSize.Height / 8),
-                        Location = new Point((this.ClientSize.Width - (this.ClientSize.Width / 16)) / 2 + ((playerList[playerNum].playerCards.Count() / 2) - i) * this.ClientSize.Width / 50, 0),
+                        Location = new Point((this.ClientSize.Width - (this.ClientSize.Width / 16)) / 2 + ((playerList[playerNum].playerCards.Count() / 2) - i) * this.ClientSize.Width / 50, 20),
                         Image = Properties.Resources.unoCard,
                         SizeMode = PictureBoxSizeMode.StretchImage
                     };
@@ -452,14 +583,51 @@ namespace ALP_UNO_Game
             }
         }
 
-        public void updateCard(Card theCard)
+        public void updateCard()
         {
             pic_TheCard.Image = (Image)Properties.Resources.ResourceManager.GetObject(theCard.cardName);
             lbl_CardDeckCount.Text = $"Card : {cardDeck.Count()}";
         }
 
-        #endregion
+        private void pic_CardDeck_Click(object sender, EventArgs e)
+        {
+            drawCard(playerList[playerNum].playerCards, 1);
+            playerDrawCard = true;
 
+            if (playerList[playerNum].playerCards[playerList[playerNum].playerCards.Count() - 1].cardColor == "wild" || playerList[playerNum].playerCards[playerList[playerNum].playerCards.Count() - 1].cardColor == theCard.cardColor || playerList[playerNum].playerCards[playerList[playerNum].playerCards.Count() - 1].cardValue == theCard.cardValue)
+            {
+                playCard Form = new playCard(playerList[playerNum].playerCards[playerList[playerNum].playerCards.Count() - 1].cardName);
+                Form.ShowDialog();
+
+                bool yesButtonClicked = Form.buttonClicked;
+                if (yesButtonClicked)
+                {
+                    theCard = playerList[playerNum].playerCards[playerList[playerNum].playerCards.Count() - 1];
+                    playerList[playerNum].playerCards.RemoveAt(playerList[playerNum].playerCards.Count() - 1);
+                    playerDrawCard = false;
+                }
+            }
+            sortPlayerCard();
+            showPlayerCard();
+            updateCard();
+            endTurn();
+        }
+
+        private void pic_CardDeck_MouseHover(object sender, EventArgs e)
+        {
+            pic_CardDeck.Left -= 2;
+            pic_CardDeck.Top -= 2;
+            pic_CardDeck.Width += 4;
+            pic_CardDeck.Height += 4;
+        }
+
+        private void pic_CardDeck_MouseLeave(object sender, EventArgs e)
+        {
+            this.pic_CardDeck.Location = new System.Drawing.Point((this.ClientSize.Width - this.ClientSize.Width / 4) / 2, (this.ClientSize.Height - this.ClientSize.Height / 3) / 2);
+            this.pic_CardDeck.Size = new System.Drawing.Size(this.ClientSize.Width / 10, this.ClientSize.Height / 4);
+        }
+
+        #endregion
     }
 }
 

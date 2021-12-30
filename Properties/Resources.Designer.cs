@@ -243,6 +243,16 @@ namespace ALP_UNO_Game.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap game_over {
+            get {
+                object obj = ResourceManager.GetObject("game_over", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap green_0 {
             get {
                 object obj = ResourceManager.GetObject("green_0", resourceCulture);
@@ -386,6 +396,26 @@ namespace ALP_UNO_Game.Properties {
         internal static System.Drawing.Bitmap green_wildCard {
             get {
                 object obj = ResourceManager.GetObject("green_wildCard", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap music_pic {
+            get {
+                object obj = ResourceManager.GetObject("music_pic", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap music_pic1 {
+            get {
+                object obj = ResourceManager.GetObject("music_pic1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

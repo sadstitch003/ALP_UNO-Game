@@ -9,3 +9,16 @@ E:\Folder An\Coding Stuff\Visual Studio\ALP_UNO Game\bin\Debug\ALP_UNO Game.exe
 E:\Folder An\Coding Stuff\Visual Studio\ALP_UNO Game\bin\Debug\ALP_UNO Game.pdb
 E:\Folder An\Coding Stuff\Visual Studio\ALP_UNO Game\obj\Debug\ALP_UNO Game.exe
 E:\Folder An\Coding Stuff\Visual Studio\ALP_UNO Game\obj\Debug\ALP_UNO Game.pdb
+E:\Folder An\Coding Stuff\Visual Studio\ALP_UNO-Game\obj\Debug\ALP_UNO Game.csproj.AssemblyReference.cache
+E:\Folder An\Coding Stuff\Visual Studio\ALP_UNO-Game\obj\Debug\ALP_UNO Game.csproj.SuggestedBindingRedirects.cache
+E:\Folder An\Coding Stuff\Visual Studio\ALP_UNO-Game\obj\Debug\ALP_UNO_Game.playCard.resources
+E:\Folder An\Coding Stuff\Visual Studio\ALP_UNO-Game\obj\Debug\ALP_UNO_Game.Game.resources
+E:\Folder An\Coding Stuff\Visual Studio\ALP_UNO-Game\obj\Debug\ALP_UNO_Game.Properties.Resources.resources
+E:\Folder An\Coding Stuff\Visual Studio\ALP_UNO-Game\obj\Debug\ALP_UNO Game.csproj.GenerateResource.cache
+E:\Folder An\Coding Stuff\Visual Studio\ALP_UNO-Game\obj\Debug\ALP_UNO Game.csproj.CoreCompileInputs.cache
+E:\Folder An\Coding Stuff\Visual Studio\ALP_UNO-Game\bin\Debug\ALP_UNO Game.exe.config
+E:\Folder An\Coding Stuff\Visual Studio\ALP_UNO-Game\bin\Debug\ALP_UNO Game.exe
+E:\Folder An\Coding Stuff\Visual Studio\ALP_UNO-Game\bin\Debug\ALP_UNO Game.pdb
+E:\Folder An\Coding Stuff\Visual Studio\ALP_UNO-Game\obj\Debug\ALP_UNO Game.exe
+E:\Folder An\Coding Stuff\Visual Studio\ALP_UNO-Game\obj\Debug\ALP_UNO Game.pdb
+E:\Folder An\Coding Stuff\Visual Studio\ALP_UNO-Game\obj\Debug\ALP_UNO_Game.colorPicker.resources

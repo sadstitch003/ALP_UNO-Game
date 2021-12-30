@@ -46,6 +46,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="colorPicker.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="colorPicker.Designer.cs">
+      <DependentUpon>colorPicker.cs</DependentUpon>
+    </Compile>
+    <Compile Include="playCard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="playCard.Designer.cs">
+      <DependentUpon>playCard.cs</DependentUpon>
+    </Compile>
     <Compile Include="UNO_Game.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -54,6 +66,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="colorPicker.resx">
+      <DependentUpon>colorPicker.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="playCard.resx">
+      <DependentUpon>playCard.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UNO_Game.resx">
       <DependentUpon>UNO_Game.cs</DependentUpon>
     </EmbeddedResource>
@@ -289,6 +307,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\background-mainmenu-prop.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\music_pic1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\game_over.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
