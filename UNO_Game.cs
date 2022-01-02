@@ -152,7 +152,7 @@ namespace ALP_UNO_Game
             return card;
         }
 
-        public bool playerCannotPlay(List<Card> playerCard, Card theCard)
+        public bool playerCannotPlay(List<Card> playerCard)
         {
             foreach (var card in playerCard)
                 if (card.cardColor == "wild" || card.cardColor == theCard.cardColor || card.cardValue == theCard.cardValue)
@@ -178,7 +178,7 @@ namespace ALP_UNO_Game
 
 
             playerDrawCard = false;
-            if (playerCannotPlay(playerList[playerNum].playerCards, theCard))
+            if (playerCannotPlay(playerList[playerNum].playerCards))
             {
                 if (cardDeck.Count() == 0)
                 {
@@ -406,9 +406,6 @@ namespace ALP_UNO_Game
             this.lbl_Score.Location = new System.Drawing.Point(this.ClientSize.Width / 2 - 20, this.ClientSize.Height / 2 + this.ClientSize.Height / 10 + 20);
             this.lbl_Score.Font = new System.Drawing.Font("Microsoft Sans Serif", (float)(this.ClientSize.Width / 100), System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
         }
-
-
-
         private void Game_SizeChanged(object sender, EventArgs e)
         {
             if (pnl_MainMenu.Visible)
@@ -516,14 +513,14 @@ namespace ALP_UNO_Game
             {
                 for (int i = 0; i < playerList[playerNum].playerCards.Count(); i++)
                     if (playerList[playerNum].playerCards[i].cardName == pictureBox.Name)
-                        {
-                            theCard = playerList[playerNum].playerCards[i];
-                            updateCard();
+                    {
+                        theCard = playerList[playerNum].playerCards[i];
+                        updateCard();
 
-                            playerList[playerNum].playerCards.RemoveAt(i);
-                            sortPlayerCard();
-                            showPlayerCard();
-                        }
+                        playerList[playerNum].playerCards.RemoveAt(i);
+                        sortPlayerCard();
+                        showPlayerCard();
+                    }
                 endTurn();
             }
         }
