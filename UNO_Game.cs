@@ -457,8 +457,7 @@ namespace ALP_UNO_Game
             int playerCount = 2;
             int cardCount = 7;
             //
-            //pnl_GamePanel.Visible = true;
-            pnl_GameOver.Visible = true;
+            pnl_GamePanel.Visible = true;
             StartGame(playerCount, cardCount);
         }
 
