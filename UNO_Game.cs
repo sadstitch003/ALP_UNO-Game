@@ -403,13 +403,14 @@ namespace ALP_UNO_Game
             soundPlayer.SoundLocation = "uno_music.wav";
             soundPlayer.PlayLooping();
 
-            // Main menu panel
             this.pnl_MainMenu.Height = this.ClientSize.Height;
             this.pic_MenuPic.Width = this.ClientSize.Width / 2;
             this.pic_UnoPicture.Height = this.ClientSize.Height / 2;
             resetCardSetting();
+        }
 
-            // Game panel
+        private void pnl_GamePanel_VisibleChanged(object sender, EventArgs e)
+        {
             this.pnl_GamePanel.Height = this.ClientSize.Height;
             this.pnl_PlayerCard.Height = this.ClientSize.Height / 3;
             this.pnl_EnemyCard1.Height = this.ClientSize.Height / 4;
@@ -419,7 +420,10 @@ namespace ALP_UNO_Game
             this.pic_CardDeck.Size = new System.Drawing.Size(this.ClientSize.Width / 10, this.ClientSize.Height / 4);
             this.lbl_CardDeckCount.Location = new System.Drawing.Point((this.ClientSize.Width - this.ClientSize.Width / 4) / 2 + (this.ClientSize.Width / 60), (this.ClientSize.Height - this.ClientSize.Height / 3) / 2 + (this.ClientSize.Height / 4));
             this.lbl_CardDeckCount.Font = new System.Drawing.Font("Microsoft Sans Serif", (float)(this.ClientSize.Width / 100), System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+        }
 
+        private void pic_GameOver_VisibleChanged(object sender, EventArgs e)
+        {
             // Game Over Panel
             this.pnl_GameOver.Size = this.ClientSize;
             this.btn_PlayAgain.Size = new System.Drawing.Size(this.ClientSize.Width / 3, this.ClientSize.Height / 10);
@@ -429,6 +433,7 @@ namespace ALP_UNO_Game
             this.lbl_Score.Location = new System.Drawing.Point(this.ClientSize.Width / 2 - 20, this.ClientSize.Height / 2 + this.ClientSize.Height / 10 + 20);
             this.lbl_Score.Font = new System.Drawing.Font("Microsoft Sans Serif", (float)(this.ClientSize.Width / 100), System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
         }
+
         private void Game_SizeChanged(object sender, EventArgs e)
         {
             if (pnl_MainMenu.Visible)
@@ -669,6 +674,7 @@ namespace ALP_UNO_Game
             btn_StartButton.Size = new System.Drawing.Size(this.btn_StartButton.Width - 4, this.btn_StartButton.Height - 4);
         }
         #endregion
+
     }
 }
 

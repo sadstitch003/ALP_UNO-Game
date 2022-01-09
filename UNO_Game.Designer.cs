@@ -75,7 +75,7 @@
             this.pnl_MainMenu.Location = new System.Drawing.Point(0, 0);
             this.pnl_MainMenu.Name = "pnl_MainMenu";
             this.pnl_MainMenu.Padding = new System.Windows.Forms.Padding(0, 20, 10, 0);
-            this.pnl_MainMenu.Size = new System.Drawing.Size(782, 104);
+            this.pnl_MainMenu.Size = new System.Drawing.Size(782, 144);
             this.pnl_MainMenu.TabIndex = 0;
             // 
             // PlayButton
@@ -109,7 +109,7 @@
             this.pic_MenuPic.Image = ((System.Drawing.Image)(resources.GetObject("pic_MenuPic.Image")));
             this.pic_MenuPic.Location = new System.Drawing.Point(0, 20);
             this.pic_MenuPic.Name = "pic_MenuPic";
-            this.pic_MenuPic.Size = new System.Drawing.Size(406, 84);
+            this.pic_MenuPic.Size = new System.Drawing.Size(406, 124);
             this.pic_MenuPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pic_MenuPic.TabIndex = 3;
             this.pic_MenuPic.TabStop = false;
@@ -166,11 +166,12 @@
             this.pnl_GamePanel.Controls.Add(this.pnl_EnemyCard1);
             this.pnl_GamePanel.Controls.Add(this.pnl_PlayerCard);
             this.pnl_GamePanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnl_GamePanel.Location = new System.Drawing.Point(0, 104);
+            this.pnl_GamePanel.Location = new System.Drawing.Point(0, 144);
             this.pnl_GamePanel.Name = "pnl_GamePanel";
-            this.pnl_GamePanel.Size = new System.Drawing.Size(782, 221);
+            this.pnl_GamePanel.Size = new System.Drawing.Size(782, 355);
             this.pnl_GamePanel.TabIndex = 1;
             this.pnl_GamePanel.Visible = false;
+            this.pnl_GamePanel.VisibleChanged += new System.EventHandler(this.pnl_GamePanel_VisibleChanged);
             // 
             // lbl_CardDeckCount
             // 
@@ -221,9 +222,9 @@
             // 
             this.pnl_PlayerCard.BackColor = System.Drawing.Color.Transparent;
             this.pnl_PlayerCard.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnl_PlayerCard.Location = new System.Drawing.Point(0, 46);
+            this.pnl_PlayerCard.Location = new System.Drawing.Point(0, 275);
             this.pnl_PlayerCard.Name = "pnl_PlayerCard";
-            this.pnl_PlayerCard.Size = new System.Drawing.Size(782, 175);
+            this.pnl_PlayerCard.Size = new System.Drawing.Size(782, 80);
             this.pnl_PlayerCard.TabIndex = 0;
             // 
             // pnl_GameOver
@@ -235,7 +236,7 @@
             this.pnl_GameOver.Controls.Add(this.btn_PlayAgain);
             this.pnl_GameOver.Controls.Add(this.pic_GameOver);
             this.pnl_GameOver.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnl_GameOver.Location = new System.Drawing.Point(0, 325);
+            this.pnl_GameOver.Location = new System.Drawing.Point(0, 499);
             this.pnl_GameOver.Name = "pnl_GameOver";
             this.pnl_GameOver.Size = new System.Drawing.Size(782, 450);
             this.pnl_GameOver.TabIndex = 2;
@@ -274,8 +275,8 @@
             this.btn_PlayAgain.TabIndex = 1;
             this.btn_PlayAgain.TabStop = false;
             this.btn_PlayAgain.Click += new System.EventHandler(this.btn_PlayAgain_Click);
-            this.btn_PlayAgain.MouseHover += new System.EventHandler(this.btn_PlayAgain_MouseHover);
             this.btn_PlayAgain.MouseLeave += new System.EventHandler(this.btn_PlayAgain_MouseLeave);
+            this.btn_PlayAgain.MouseHover += new System.EventHandler(this.btn_PlayAgain_MouseHover);
             // 
             // pic_GameOver
             // 
@@ -288,6 +289,7 @@
             this.pic_GameOver.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pic_GameOver.TabIndex = 0;
             this.pic_GameOver.TabStop = false;
+            this.pic_GameOver.VisibleChanged += new System.EventHandler(this.pic_GameOver_VisibleChanged);
             // 
             // Game
             // 
