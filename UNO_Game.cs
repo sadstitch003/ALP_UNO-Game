@@ -266,7 +266,7 @@ namespace ALP_UNO_Game
                     {
                         tempCardCount = playerList[i].playerCards.Count();
                         lbl_Winner.Text = $"Winner : Player {i + 1}";
-                        lbl_Score.Text = $"Score  : {playerList[i].score}";
+                        lbl_Score.Text = $"Score   : {playerList[i].score}";
                     }
                 }
 
@@ -281,7 +281,7 @@ namespace ALP_UNO_Game
                             {
                                 tempTopScore = playerList[i].score;
                                 lbl_Winner.Text = $"Winner : Player {i + 1}";
-                                lbl_Score.Text = $"Score  : {playerList[i].score}";
+                                lbl_Score.Text = $"Score   : {playerList[i].score}";
                             }
                         }
                     }
