@@ -370,7 +370,7 @@ namespace ALP_UNO_Game
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
-            if (PlayButton.Checked) soundPlayer.Play();
+            if (PlayButton.Checked) soundPlayer.PlayLooping();
             else soundPlayer.Stop();
         }
 
@@ -378,7 +378,7 @@ namespace ALP_UNO_Game
         {
             this.ClientSize = new System.Drawing.Size(800, 450);
             soundPlayer.SoundLocation = "uno_music.wav";
-            soundPlayer.Play();
+            soundPlayer.PlayLooping();
 
             // Main menu panel
             this.pnl_MainMenu.Height = this.ClientSize.Height;
