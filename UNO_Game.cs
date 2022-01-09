@@ -215,12 +215,9 @@ namespace ALP_UNO_Game
 
         public void StartGame(int playerCount, int cardCount)
         {
-            Card theCard;
             playerNum = 0;
             playDirection = 1;
             gameOver = false;
-            List<Player> playerList { get; set; }
-            List<Card> cardDeck { get; set; }
 
             generateStartingDeck();
             shuffleDeck();
