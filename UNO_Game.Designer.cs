@@ -274,6 +274,8 @@
             this.btn_PlayAgain.TabIndex = 1;
             this.btn_PlayAgain.TabStop = false;
             this.btn_PlayAgain.Click += new System.EventHandler(this.btn_PlayAgain_Click);
+            this.btn_PlayAgain.MouseHover += new System.EventHandler(this.btn_PlayAgain_MouseHover);
+            this.btn_PlayAgain.MouseLeave += new System.EventHandler(this.btn_PlayAgain_MouseLeave);
             // 
             // pic_GameOver
             // 

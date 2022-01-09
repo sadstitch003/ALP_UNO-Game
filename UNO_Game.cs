@@ -33,6 +33,7 @@ namespace ALP_UNO_Game
         public class Player
         {
             public List<Card> playerCards = new List<Card>();
+            public int score;
         }
 
         #endregion
@@ -244,50 +245,44 @@ namespace ALP_UNO_Game
             gameOver = checkGameStatus();
             if (gameOver)
             {
-                string winner = "";
-                int score = 0;
 
-                if (playerList[0].playerCards.Count() == playerList[1].playerCards.Count())
+                int tempCardCount = 100;
+                for (int i = 0; i < playerList.Count(); i++)
                 {
-                    int[] playerScore = new int[playerList.Count()];
-                    for (int i = 0; i < playerList.Count(); i++)
+                    for (int j = 0; j < playerList.Count(); j++)
                     {
-                        for (int j = 0; j < playerList.Count(); j++)
-                        {
-                            if (j == i) continue;
-                            foreach (var card in playerList[j].playerCards)
-                                score += card.score;
-                        }
+                        if (j == i) continue;
+                        foreach (var card in playerList[j].playerCards)
+                            playerList[i].score += card.score;
+                    }
 
-                        playerScore[i] = score;
-                        score = 0;
-
-                        if (playerScore[i] == playerScore.Max())
-                            winner = $"Winner : Player {i + 1}";
+                    if (playerList[i].playerCards.Count() == tempCardCount)
+                        lbl_Winner.Text = "DRAW";
+                    else if (playerList[i].playerCards.Count() < tempCardCount)
+                    {
+                        tempCardCount = playerList[i].playerCards.Count();
+                        lbl_Winner.Text = $"Winner : Player {i + 1}";
+                        lbl_Score.Text = $"Score : {playerList[i].score}";
                     }
                 }
-                else
+
+                int tempTopScore = 0;
+                if (lbl_Winner.Text == "DRAW")
                 {
                     for (int i = 0; i < playerList.Count(); i++)
                     {
-                        if (playerList[i].playerCards.Count() == 0)
+                        if (playerList[i].playerCards.Count() == tempCardCount)
                         {
-                            winner = $"Winner : Player {i + 1}";
-
-                            for (int j = 0; j < playerList.Count(); j++)
+                            if (playerList[i].score > tempTopScore)
                             {
-                                if (j == i) continue;
-                                foreach (var card in playerList[j].playerCards)
-                                    score += card.score;
+                                tempTopScore = playerList[i].score;
+                                lbl_Winner.Text = $"Player {i + 1}";
+                                lbl_Score.Text = $"Score : {playerList[i].score}";
                             }
                         }
                     }
                 }
 
-
-
-                lbl_Winner.Text = winner;
-                lbl_Score.Text = $"Score : {score}";
                 pnl_GamePanel.Visible = false;
                 pnl_GameOver.Visible = true;
             }
@@ -479,7 +474,7 @@ namespace ALP_UNO_Game
             pnl_MainMenu.Visible = false;
             // Choose player panel here
             int playerCount = 2;
-            int cardCount = 7;
+            int cardCount = 4;
             //
             pnl_GamePanel.Visible = true;
             StartGame(playerCount, cardCount);
@@ -654,6 +649,20 @@ namespace ALP_UNO_Game
         {
             pnl_GameOver.Visible = false;
             pnl_MainMenu.Visible = true;
+        }
+
+        private void btn_PlayAgain_MouseHover(object sender, EventArgs e)
+        {
+            btn_StartButton.Left -= 2;
+            btn_StartButton.Top -= 2;
+            btn_StartButton.Size = new System.Drawing.Size(this.btn_StartButton.Width + 4, this.btn_StartButton.Height + 4);
+        }
+
+        private void btn_PlayAgain_MouseLeave(object sender, EventArgs e)
+        {
+            btn_StartButton.Left += 2;
+            btn_StartButton.Top += 2;
+            btn_StartButton.Size = new System.Drawing.Size(this.btn_StartButton.Width - 4, this.btn_StartButton.Height - 4);
         }
         #endregion
     }
