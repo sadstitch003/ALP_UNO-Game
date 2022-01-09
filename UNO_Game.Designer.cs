@@ -75,7 +75,7 @@
             this.pnl_MainMenu.Location = new System.Drawing.Point(0, 0);
             this.pnl_MainMenu.Name = "pnl_MainMenu";
             this.pnl_MainMenu.Padding = new System.Windows.Forms.Padding(0, 20, 10, 0);
-            this.pnl_MainMenu.Size = new System.Drawing.Size(782, 144);
+            this.pnl_MainMenu.Size = new System.Drawing.Size(782, 122);
             this.pnl_MainMenu.TabIndex = 0;
             // 
             // PlayButton
@@ -109,7 +109,7 @@
             this.pic_MenuPic.Image = ((System.Drawing.Image)(resources.GetObject("pic_MenuPic.Image")));
             this.pic_MenuPic.Location = new System.Drawing.Point(0, 20);
             this.pic_MenuPic.Name = "pic_MenuPic";
-            this.pic_MenuPic.Size = new System.Drawing.Size(406, 124);
+            this.pic_MenuPic.Size = new System.Drawing.Size(406, 102);
             this.pic_MenuPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pic_MenuPic.TabIndex = 3;
             this.pic_MenuPic.TabStop = false;
@@ -126,6 +126,9 @@
             this.btn_RulesButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btn_RulesButton.TabIndex = 2;
             this.btn_RulesButton.TabStop = false;
+            this.btn_RulesButton.Click += new System.EventHandler(this.btn_RulesButton_Click);
+            this.btn_RulesButton.MouseLeave += new System.EventHandler(this.btn_RulesButton_MouseLeave);
+            this.btn_RulesButton.MouseHover += new System.EventHandler(this.btn_RulesButton_MouseHover);
             // 
             // btn_CreditsButton
             // 
@@ -139,6 +142,9 @@
             this.btn_CreditsButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btn_CreditsButton.TabIndex = 1;
             this.btn_CreditsButton.TabStop = false;
+            this.btn_CreditsButton.Click += new System.EventHandler(this.btn_CreditsButton_Click);
+            this.btn_CreditsButton.MouseLeave += new System.EventHandler(this.btn_CreditsButton_MouseLeave);
+            this.btn_CreditsButton.MouseHover += new System.EventHandler(this.btn_CreditsButton_MouseHover);
             // 
             // btn_StartButton
             // 
@@ -166,9 +172,9 @@
             this.pnl_GamePanel.Controls.Add(this.pnl_EnemyCard1);
             this.pnl_GamePanel.Controls.Add(this.pnl_PlayerCard);
             this.pnl_GamePanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnl_GamePanel.Location = new System.Drawing.Point(0, 144);
+            this.pnl_GamePanel.Location = new System.Drawing.Point(0, 122);
             this.pnl_GamePanel.Name = "pnl_GamePanel";
-            this.pnl_GamePanel.Size = new System.Drawing.Size(782, 355);
+            this.pnl_GamePanel.Size = new System.Drawing.Size(782, 104);
             this.pnl_GamePanel.TabIndex = 1;
             this.pnl_GamePanel.Visible = false;
             this.pnl_GamePanel.VisibleChanged += new System.EventHandler(this.pnl_GamePanel_VisibleChanged);
@@ -215,16 +221,16 @@
             this.pnl_EnemyCard1.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnl_EnemyCard1.Location = new System.Drawing.Point(0, 0);
             this.pnl_EnemyCard1.Name = "pnl_EnemyCard1";
-            this.pnl_EnemyCard1.Size = new System.Drawing.Size(782, 102);
+            this.pnl_EnemyCard1.Size = new System.Drawing.Size(782, 46);
             this.pnl_EnemyCard1.TabIndex = 1;
             // 
             // pnl_PlayerCard
             // 
             this.pnl_PlayerCard.BackColor = System.Drawing.Color.Transparent;
             this.pnl_PlayerCard.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnl_PlayerCard.Location = new System.Drawing.Point(0, 275);
+            this.pnl_PlayerCard.Location = new System.Drawing.Point(0, 67);
             this.pnl_PlayerCard.Name = "pnl_PlayerCard";
-            this.pnl_PlayerCard.Size = new System.Drawing.Size(782, 80);
+            this.pnl_PlayerCard.Size = new System.Drawing.Size(782, 37);
             this.pnl_PlayerCard.TabIndex = 0;
             // 
             // pnl_GameOver
@@ -236,7 +242,7 @@
             this.pnl_GameOver.Controls.Add(this.btn_PlayAgain);
             this.pnl_GameOver.Controls.Add(this.pic_GameOver);
             this.pnl_GameOver.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnl_GameOver.Location = new System.Drawing.Point(0, 499);
+            this.pnl_GameOver.Location = new System.Drawing.Point(0, 226);
             this.pnl_GameOver.Name = "pnl_GameOver";
             this.pnl_GameOver.Size = new System.Drawing.Size(782, 450);
             this.pnl_GameOver.TabIndex = 2;
@@ -296,7 +302,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(782, 1008);
+            this.ClientSize = new System.Drawing.Size(782, 1055);
             this.Controls.Add(this.pnl_GameOver);
             this.Controls.Add(this.pnl_GamePanel);
             this.Controls.Add(this.pnl_MainMenu);

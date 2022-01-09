@@ -379,16 +379,6 @@ namespace ALP_UNO_Game
 
         #endregion
 
-        private void resetButtonSetting()
-        {
-            this.btn_StartButton.Size = new System.Drawing.Size(this.ClientSize.Width / 3, this.ClientSize.Height / 10);
-            this.btn_StartButton.Location = new System.Drawing.Point(this.ClientSize.Width * 3 / 4 - this.btn_StartButton.Width / 2, this.ClientSize.Height / 2 + this.btn_StartButton.Height);
-            this.btn_RulesButton.Size = new System.Drawing.Size(this.ClientSize.Width / 3, this.ClientSize.Height / 10);
-            this.btn_RulesButton.Location = new System.Drawing.Point(this.ClientSize.Width * 3 / 4 - this.btn_StartButton.Width / 2, this.ClientSize.Height / 2 + this.btn_StartButton.Height * 2);
-            this.btn_CreditsButton.Size = new System.Drawing.Size(this.ClientSize.Width / 3, this.ClientSize.Height / 10);
-            this.btn_CreditsButton.Location = new System.Drawing.Point(this.ClientSize.Width * 3 / 4 - this.btn_StartButton.Width / 2, this.ClientSize.Height / 2 + this.btn_StartButton.Height * 3);
-        }
-
         private SoundPlayer soundPlayer = new SoundPlayer();
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
@@ -442,7 +432,13 @@ namespace ALP_UNO_Game
                 this.pnl_MainMenu.Height = this.ClientSize.Height;
                 this.pic_MenuPic.Width = this.ClientSize.Width / 2;
                 this.pic_UnoPicture.Height = this.ClientSize.Height / 2;
-                resetButtonSetting();
+                this.btn_StartButton.Size = new System.Drawing.Size(this.ClientSize.Width / 3, this.ClientSize.Height / 10);
+                this.btn_StartButton.Location = new System.Drawing.Point(this.ClientSize.Width * 3 / 4 - this.btn_StartButton.Width / 2, this.ClientSize.Height / 2 + this.btn_StartButton.Height);
+                this.btn_RulesButton.Size = new System.Drawing.Size(this.ClientSize.Width / 3, this.ClientSize.Height / 10);
+                this.btn_RulesButton.Location = new System.Drawing.Point(this.ClientSize.Width * 3 / 4 - this.btn_StartButton.Width / 2, this.ClientSize.Height / 2 + this.btn_StartButton.Height * 2);
+                this.btn_CreditsButton.Size = new System.Drawing.Size(this.ClientSize.Width / 3, this.ClientSize.Height / 10);
+                this.btn_CreditsButton.Location = new System.Drawing.Point(this.ClientSize.Width * 3 / 4 - this.btn_StartButton.Width / 2, this.ClientSize.Height / 2 + this.btn_StartButton.Height * 3);
+
             }
             else if (pnl_GamePanel.Visible)
             {
@@ -475,7 +471,16 @@ namespace ALP_UNO_Game
         {
             btn_StartButton.Left -= 2;
             btn_StartButton.Top -= 2;
-            btn_StartButton.Size = new System.Drawing.Size(this.btn_StartButton.Width + 4, this.btn_StartButton.Height + 4);
+            btn_StartButton.Width += 4;
+            btn_StartButton.Height += 4;
+        }
+
+        private void btn_StartButton_MouseLeave(object sender, EventArgs e)
+        {
+            btn_StartButton.Left -= 2;
+            btn_StartButton.Top -= 2;
+            btn_StartButton.Width += 4;
+            btn_StartButton.Height += 4;
         }
 
         private void btn_StartButton_Click(object sender, EventArgs e)
@@ -489,9 +494,46 @@ namespace ALP_UNO_Game
             StartGame(playerCount, cardCount);
         }
 
-        private void btn_StartButton_MouseLeave(object sender, EventArgs e)
+        private void btn_RulesButton_MouseHover(object sender, EventArgs e)
         {
-            resetButtonSetting();
+            btn_StartButton.Left -= 2;
+            btn_StartButton.Top -= 2;
+            btn_StartButton.Width += 4;
+            btn_StartButton.Height += 4;
+        }
+
+        private void btn_RulesButton_MouseLeave(object sender, EventArgs e)
+        {
+            btn_StartButton.Left -= 2;
+            btn_StartButton.Top -= 2;
+            btn_StartButton.Width += 4;
+            btn_StartButton.Height += 4;
+        }
+
+        private void btn_RulesButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_CreditsButton_MouseHover(object sender, EventArgs e)
+        {
+            btn_StartButton.Left -= 2;
+            btn_StartButton.Top -= 2;
+            btn_StartButton.Width += 4;
+            btn_StartButton.Height += 4;
+        }
+
+        private void btn_CreditsButton_MouseLeave(object sender, EventArgs e)
+        {
+            btn_StartButton.Left -= 2;
+            btn_StartButton.Top -= 2;
+            btn_StartButton.Width += 4;
+            btn_StartButton.Height += 4;
+        }
+
+        private void btn_CreditsButton_Click(object sender, EventArgs e)
+        {
+
         }
 
         #endregion
@@ -647,8 +689,10 @@ namespace ALP_UNO_Game
 
         private void pic_CardDeck_MouseLeave(object sender, EventArgs e)
         {
-            this.pic_CardDeck.Location = new System.Drawing.Point((this.ClientSize.Width - this.ClientSize.Width / 4) / 2, (this.ClientSize.Height - this.ClientSize.Height / 3) / 2);
-            this.pic_CardDeck.Size = new System.Drawing.Size(this.ClientSize.Width / 10, this.ClientSize.Height / 4);
+            pic_CardDeck.Left += 2;
+            pic_CardDeck.Top += 2;
+            pic_CardDeck.Width -= 4;
+            pic_CardDeck.Height -= 4;
         }
 
         #endregion
@@ -662,16 +706,16 @@ namespace ALP_UNO_Game
 
         private void btn_PlayAgain_MouseHover(object sender, EventArgs e)
         {
-            btn_StartButton.Left -= 2;
-            btn_StartButton.Top -= 2;
-            btn_StartButton.Size = new System.Drawing.Size(this.btn_StartButton.Width + 4, this.btn_StartButton.Height + 4);
+            btn_PlayAgain.Left -= 2;
+            btn_PlayAgain.Top -= 2;
+            btn_PlayAgain.Size = new System.Drawing.Size(this.btn_PlayAgain.Width + 4, this.btn_PlayAgain.Height + 4);
         }
 
         private void btn_PlayAgain_MouseLeave(object sender, EventArgs e)
         {
-            btn_StartButton.Left += 2;
-            btn_StartButton.Top += 2;
-            btn_StartButton.Size = new System.Drawing.Size(this.btn_StartButton.Width - 4, this.btn_StartButton.Height - 4);
+            btn_PlayAgain.Left += 2;
+            btn_PlayAgain.Top += 2;
+            btn_PlayAgain.Size = new System.Drawing.Size(this.btn_PlayAgain.Width - 4, this.btn_PlayAgain.Height - 4);
         }
         #endregion
 
