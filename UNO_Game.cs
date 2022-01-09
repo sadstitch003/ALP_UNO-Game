@@ -245,22 +245,46 @@ namespace ALP_UNO_Game
             if (gameOver)
             {
                 string winner = "";
-                int cardCount = 0;
                 int score = 0;
-                for (int i = 0; i < playerList.Count(); i++)
-                {
-                    if (playerList[i].playerCards.Count() <= cardCount)
-                    {
-                        winner = $"Winner : Player {i + 1}";
 
+                if (playerList[0].playerCards.Count() == playerList[1].playerCards.Count())
+                {
+                    int[] playerScore = new int[playerList.Count()];
+                    for (int i = 0; i < playerList.Count(); i++)
+                    {
                         for (int j = 0; j < playerList.Count(); j++)
                         {
                             if (j == i) continue;
                             foreach (var card in playerList[j].playerCards)
                                 score += card.score;
                         }
+
+                        playerScore[i] = score;
+                        score = 0;
+
+                        if (playerScore[i] == playerScore.Max())
+                            winner = $"Winner : Player {i + 1}";
                     }
                 }
+                else
+                {
+                    for (int i = 0; i < playerList.Count(); i++)
+                    {
+                        if (playerList[i].playerCards.Count() == 0)
+                        {
+                            winner = $"Winner : Player {i + 1}";
+
+                            for (int j = 0; j < playerList.Count(); j++)
+                            {
+                                if (j == i) continue;
+                                foreach (var card in playerList[j].playerCards)
+                                    score += card.score;
+                            }
+                        }
+                    }
+                }
+
+
 
                 lbl_Winner.Text = winner;
                 lbl_Score.Text = $"Score : {score}";

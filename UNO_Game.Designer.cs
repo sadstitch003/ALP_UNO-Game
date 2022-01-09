@@ -75,7 +75,7 @@
             this.pnl_MainMenu.Location = new System.Drawing.Point(0, 0);
             this.pnl_MainMenu.Name = "pnl_MainMenu";
             this.pnl_MainMenu.Padding = new System.Windows.Forms.Padding(0, 20, 10, 0);
-            this.pnl_MainMenu.Size = new System.Drawing.Size(782, 188);
+            this.pnl_MainMenu.Size = new System.Drawing.Size(782, 104);
             this.pnl_MainMenu.TabIndex = 0;
             // 
             // PlayButton
@@ -109,7 +109,7 @@
             this.pic_MenuPic.Image = ((System.Drawing.Image)(resources.GetObject("pic_MenuPic.Image")));
             this.pic_MenuPic.Location = new System.Drawing.Point(0, 20);
             this.pic_MenuPic.Name = "pic_MenuPic";
-            this.pic_MenuPic.Size = new System.Drawing.Size(406, 168);
+            this.pic_MenuPic.Size = new System.Drawing.Size(406, 84);
             this.pic_MenuPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pic_MenuPic.TabIndex = 3;
             this.pic_MenuPic.TabStop = false;
@@ -166,7 +166,7 @@
             this.pnl_GamePanel.Controls.Add(this.pnl_EnemyCard1);
             this.pnl_GamePanel.Controls.Add(this.pnl_PlayerCard);
             this.pnl_GamePanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnl_GamePanel.Location = new System.Drawing.Point(0, 188);
+            this.pnl_GamePanel.Location = new System.Drawing.Point(0, 104);
             this.pnl_GamePanel.Name = "pnl_GamePanel";
             this.pnl_GamePanel.Size = new System.Drawing.Size(782, 221);
             this.pnl_GamePanel.TabIndex = 1;
@@ -235,7 +235,7 @@
             this.pnl_GameOver.Controls.Add(this.btn_PlayAgain);
             this.pnl_GameOver.Controls.Add(this.pic_GameOver);
             this.pnl_GameOver.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnl_GameOver.Location = new System.Drawing.Point(0, 409);
+            this.pnl_GameOver.Location = new System.Drawing.Point(0, 325);
             this.pnl_GameOver.Name = "pnl_GameOver";
             this.pnl_GameOver.Size = new System.Drawing.Size(782, 450);
             this.pnl_GameOver.TabIndex = 2;
