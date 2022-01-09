@@ -314,5 +314,14 @@
   <ItemGroup>
     <None Include="Resources\game_over.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bg_credits.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bg_rules.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\backBtn.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

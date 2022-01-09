@@ -47,6 +47,8 @@
             this.lbl_Winner = new System.Windows.Forms.Label();
             this.btn_PlayAgain = new System.Windows.Forms.PictureBox();
             this.pic_GameOver = new System.Windows.Forms.PictureBox();
+            this.pnl_RulesAndCredits = new System.Windows.Forms.Panel();
+            this.btn_BackButton = new System.Windows.Forms.PictureBox();
             this.pnl_MainMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_UnoPicture)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_MenuPic)).BeginInit();
@@ -59,6 +61,8 @@
             this.pnl_GameOver.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btn_PlayAgain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_GameOver)).BeginInit();
+            this.pnl_RulesAndCredits.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_BackButton)).BeginInit();
             this.SuspendLayout();
             // 
             // pnl_MainMenu
@@ -297,12 +301,41 @@
             this.pic_GameOver.TabStop = false;
             this.pic_GameOver.VisibleChanged += new System.EventHandler(this.pic_GameOver_VisibleChanged);
             // 
+            // pnl_RulesAndCredits
+            // 
+            this.pnl_RulesAndCredits.BackgroundImage = global::ALP_UNO_Game.Properties.Resources.background;
+            this.pnl_RulesAndCredits.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pnl_RulesAndCredits.Controls.Add(this.btn_BackButton);
+            this.pnl_RulesAndCredits.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnl_RulesAndCredits.Location = new System.Drawing.Point(0, 676);
+            this.pnl_RulesAndCredits.Name = "pnl_RulesAndCredits";
+            this.pnl_RulesAndCredits.Size = new System.Drawing.Size(782, 308);
+            this.pnl_RulesAndCredits.TabIndex = 3;
+            this.pnl_RulesAndCredits.Visible = false;
+            this.pnl_RulesAndCredits.VisibleChanged += new System.EventHandler(this.pnl_RulesAndCredits_VisibleChanged);
+            // 
+            // btn_BackButton
+            // 
+            this.btn_BackButton.BackColor = System.Drawing.Color.Transparent;
+            this.btn_BackButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_BackButton.Image = global::ALP_UNO_Game.Properties.Resources.backBtn;
+            this.btn_BackButton.Location = new System.Drawing.Point(687, 224);
+            this.btn_BackButton.Name = "btn_BackButton";
+            this.btn_BackButton.Size = new System.Drawing.Size(50, 50);
+            this.btn_BackButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btn_BackButton.TabIndex = 0;
+            this.btn_BackButton.TabStop = false;
+            this.btn_BackButton.Click += new System.EventHandler(this.btn_BackButton_Click);
+            this.btn_BackButton.MouseLeave += new System.EventHandler(this.btn_BackButton_MouseLeave);
+            this.btn_BackButton.MouseHover += new System.EventHandler(this.btn_BackButton_MouseHover);
+            // 
             // Game
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(782, 1055);
+            this.ClientSize = new System.Drawing.Size(782, 1008);
+            this.Controls.Add(this.pnl_RulesAndCredits);
             this.Controls.Add(this.pnl_GameOver);
             this.Controls.Add(this.pnl_GamePanel);
             this.Controls.Add(this.pnl_MainMenu);
@@ -325,6 +358,8 @@
             this.pnl_GameOver.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btn_PlayAgain)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_GameOver)).EndInit();
+            this.pnl_RulesAndCredits.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.btn_BackButton)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -349,6 +384,8 @@
         private System.Windows.Forms.PictureBox btn_PlayAgain;
         private System.Windows.Forms.Label lbl_Winner;
         private System.Windows.Forms.Label lbl_Score;
+        private System.Windows.Forms.Panel pnl_RulesAndCredits;
+        private System.Windows.Forms.PictureBox btn_BackButton;
     }
 }
 

@@ -63,6 +63,16 @@ namespace ALP_UNO_Game.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap backBtn {
+            get {
+                object obj = ResourceManager.GetObject("backBtn", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap background {
             get {
                 object obj = ResourceManager.GetObject("background", resourceCulture);
@@ -76,6 +86,26 @@ namespace ALP_UNO_Game.Properties {
         internal static System.Drawing.Bitmap background_mainmenu_prop {
             get {
                 object obj = ResourceManager.GetObject("background_mainmenu_prop", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap bg_credits {
+            get {
+                object obj = ResourceManager.GetObject("bg_credits", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap bg_rules {
+            get {
+                object obj = ResourceManager.GetObject("bg_rules", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
