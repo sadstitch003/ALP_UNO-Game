@@ -215,6 +215,13 @@ namespace ALP_UNO_Game
 
         public void StartGame(int playerCount, int cardCount)
         {
+            Card theCard;
+            playerNum = 0;
+            playDirection = 1;
+            gameOver = false;
+            List<Player> playerList { get; set; }
+            List<Card> cardDeck { get; set; }
+
             generateStartingDeck();
             shuffleDeck();
             drawPlayerCard(playerCount, cardCount);
@@ -262,7 +269,7 @@ namespace ALP_UNO_Game
                     {
                         tempCardCount = playerList[i].playerCards.Count();
                         lbl_Winner.Text = $"Winner : Player {i + 1}";
-                        lbl_Score.Text = $"Score : {playerList[i].score}";
+                        lbl_Score.Text = $"Score  : {playerList[i].score}";
                     }
                 }
 
@@ -276,8 +283,8 @@ namespace ALP_UNO_Game
                             if (playerList[i].score > tempTopScore)
                             {
                                 tempTopScore = playerList[i].score;
-                                lbl_Winner.Text = $"Player {i + 1}";
-                                lbl_Score.Text = $"Score : {playerList[i].score}";
+                                lbl_Winner.Text = $"Winner : Player {i + 1}";
+                                lbl_Score.Text = $"Score  : {playerList[i].score}";
                             }
                         }
                     }
