@@ -43,10 +43,10 @@
             this.pnl_EnemyCard1 = new System.Windows.Forms.Panel();
             this.pnl_PlayerCard = new System.Windows.Forms.Panel();
             this.pnl_GameOver = new System.Windows.Forms.Panel();
+            this.lbl_Score = new System.Windows.Forms.Label();
             this.lbl_Winner = new System.Windows.Forms.Label();
             this.btn_PlayAgain = new System.Windows.Forms.PictureBox();
             this.pic_GameOver = new System.Windows.Forms.PictureBox();
-            this.lbl_Score = new System.Windows.Forms.Label();
             this.pnl_MainMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_UnoPicture)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_MenuPic)).BeginInit();
@@ -75,7 +75,7 @@
             this.pnl_MainMenu.Location = new System.Drawing.Point(0, 0);
             this.pnl_MainMenu.Name = "pnl_MainMenu";
             this.pnl_MainMenu.Padding = new System.Windows.Forms.Padding(0, 20, 10, 0);
-            this.pnl_MainMenu.Size = new System.Drawing.Size(782, 292);
+            this.pnl_MainMenu.Size = new System.Drawing.Size(782, 188);
             this.pnl_MainMenu.TabIndex = 0;
             // 
             // PlayButton
@@ -109,7 +109,7 @@
             this.pic_MenuPic.Image = ((System.Drawing.Image)(resources.GetObject("pic_MenuPic.Image")));
             this.pic_MenuPic.Location = new System.Drawing.Point(0, 20);
             this.pic_MenuPic.Name = "pic_MenuPic";
-            this.pic_MenuPic.Size = new System.Drawing.Size(406, 272);
+            this.pic_MenuPic.Size = new System.Drawing.Size(406, 168);
             this.pic_MenuPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pic_MenuPic.TabIndex = 3;
             this.pic_MenuPic.TabStop = false;
@@ -166,7 +166,7 @@
             this.pnl_GamePanel.Controls.Add(this.pnl_EnemyCard1);
             this.pnl_GamePanel.Controls.Add(this.pnl_PlayerCard);
             this.pnl_GamePanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnl_GamePanel.Location = new System.Drawing.Point(0, 292);
+            this.pnl_GamePanel.Location = new System.Drawing.Point(0, 188);
             this.pnl_GamePanel.Name = "pnl_GamePanel";
             this.pnl_GamePanel.Size = new System.Drawing.Size(782, 221);
             this.pnl_GamePanel.TabIndex = 1;
@@ -235,11 +235,22 @@
             this.pnl_GameOver.Controls.Add(this.btn_PlayAgain);
             this.pnl_GameOver.Controls.Add(this.pic_GameOver);
             this.pnl_GameOver.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnl_GameOver.Location = new System.Drawing.Point(0, 513);
+            this.pnl_GameOver.Location = new System.Drawing.Point(0, 409);
             this.pnl_GameOver.Name = "pnl_GameOver";
             this.pnl_GameOver.Size = new System.Drawing.Size(782, 450);
             this.pnl_GameOver.TabIndex = 2;
             this.pnl_GameOver.Visible = false;
+            // 
+            // lbl_Score
+            // 
+            this.lbl_Score.AutoSize = true;
+            this.lbl_Score.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_Score.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Score.Location = new System.Drawing.Point(375, 297);
+            this.lbl_Score.Name = "lbl_Score";
+            this.lbl_Score.Size = new System.Drawing.Size(60, 16);
+            this.lbl_Score.TabIndex = 3;
+            this.lbl_Score.Text = "Score : ";
             // 
             // lbl_Winner
             // 
@@ -262,6 +273,7 @@
             this.btn_PlayAgain.Size = new System.Drawing.Size(160, 50);
             this.btn_PlayAgain.TabIndex = 1;
             this.btn_PlayAgain.TabStop = false;
+            this.btn_PlayAgain.Click += new System.EventHandler(this.btn_PlayAgain_Click);
             // 
             // pic_GameOver
             // 
@@ -274,17 +286,6 @@
             this.pic_GameOver.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pic_GameOver.TabIndex = 0;
             this.pic_GameOver.TabStop = false;
-            // 
-            // lbl_Score
-            // 
-            this.lbl_Score.AutoSize = true;
-            this.lbl_Score.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_Score.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Score.Location = new System.Drawing.Point(375, 297);
-            this.lbl_Score.Name = "lbl_Score";
-            this.lbl_Score.Size = new System.Drawing.Size(60, 16);
-            this.lbl_Score.TabIndex = 3;
-            this.lbl_Score.Text = "Score : ";
             // 
             // Game
             // 

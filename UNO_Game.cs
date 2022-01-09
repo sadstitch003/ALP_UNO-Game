@@ -624,6 +624,14 @@ namespace ALP_UNO_Game
         }
 
         #endregion
+
+        #region GameOver
+        private void btn_PlayAgain_Click(object sender, EventArgs e)
+        {
+            pnl_GameOver.Visible = false;
+            pnl_MainMenu.Visible = true;
+        }
+        #endregion
     }
 }
 
