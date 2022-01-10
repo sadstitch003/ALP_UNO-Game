@@ -37,6 +37,7 @@
             this.btn_CreditsButton = new System.Windows.Forms.PictureBox();
             this.btn_StartButton = new System.Windows.Forms.PictureBox();
             this.pnl_GamePanel = new System.Windows.Forms.Panel();
+            this.btn_unoButton = new System.Windows.Forms.PictureBox();
             this.lbl_CardDeckCount = new System.Windows.Forms.Label();
             this.pic_CardDeck = new System.Windows.Forms.PictureBox();
             this.pic_TheCard = new System.Windows.Forms.PictureBox();
@@ -56,6 +57,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.btn_CreditsButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_StartButton)).BeginInit();
             this.pnl_GamePanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_unoButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_CardDeck)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_TheCard)).BeginInit();
             this.pnl_GameOver.SuspendLayout();
@@ -79,7 +81,7 @@
             this.pnl_MainMenu.Location = new System.Drawing.Point(0, 0);
             this.pnl_MainMenu.Name = "pnl_MainMenu";
             this.pnl_MainMenu.Padding = new System.Windows.Forms.Padding(0, 20, 10, 0);
-            this.pnl_MainMenu.Size = new System.Drawing.Size(782, 122);
+            this.pnl_MainMenu.Size = new System.Drawing.Size(761, 122);
             this.pnl_MainMenu.TabIndex = 0;
             // 
             // PlayButton
@@ -101,7 +103,7 @@
             this.pic_UnoPicture.Image = global::ALP_UNO_Game.Properties.Resources.uno_logo;
             this.pic_UnoPicture.Location = new System.Drawing.Point(406, 20);
             this.pic_UnoPicture.Name = "pic_UnoPicture";
-            this.pic_UnoPicture.Size = new System.Drawing.Size(366, 240);
+            this.pic_UnoPicture.Size = new System.Drawing.Size(345, 240);
             this.pic_UnoPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pic_UnoPicture.TabIndex = 4;
             this.pic_UnoPicture.TabStop = false;
@@ -170,6 +172,7 @@
             // 
             this.pnl_GamePanel.BackgroundImage = global::ALP_UNO_Game.Properties.Resources.background;
             this.pnl_GamePanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pnl_GamePanel.Controls.Add(this.btn_unoButton);
             this.pnl_GamePanel.Controls.Add(this.lbl_CardDeckCount);
             this.pnl_GamePanel.Controls.Add(this.pic_CardDeck);
             this.pnl_GamePanel.Controls.Add(this.pic_TheCard);
@@ -178,10 +181,25 @@
             this.pnl_GamePanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnl_GamePanel.Location = new System.Drawing.Point(0, 122);
             this.pnl_GamePanel.Name = "pnl_GamePanel";
-            this.pnl_GamePanel.Size = new System.Drawing.Size(782, 104);
+            this.pnl_GamePanel.Size = new System.Drawing.Size(761, 415);
             this.pnl_GamePanel.TabIndex = 1;
             this.pnl_GamePanel.Visible = false;
             this.pnl_GamePanel.VisibleChanged += new System.EventHandler(this.pnl_GamePanel_VisibleChanged);
+            // 
+            // btn_unoButton
+            // 
+            this.btn_unoButton.BackColor = System.Drawing.Color.Transparent;
+            this.btn_unoButton.Image = global::ALP_UNO_Game.Properties.Resources.uno_btn;
+            this.btn_unoButton.Location = new System.Drawing.Point(614, 166);
+            this.btn_unoButton.Name = "btn_unoButton";
+            this.btn_unoButton.Size = new System.Drawing.Size(100, 50);
+            this.btn_unoButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btn_unoButton.TabIndex = 5;
+            this.btn_unoButton.TabStop = false;
+            this.btn_unoButton.Visible = false;
+            this.btn_unoButton.Click += new System.EventHandler(this.btn_unoButton_Click);
+            this.btn_unoButton.MouseLeave += new System.EventHandler(this.btn_unoButton_MouseLeave);
+            this.btn_unoButton.MouseHover += new System.EventHandler(this.btn_unoButton_MouseHover);
             // 
             // lbl_CardDeckCount
             // 
@@ -225,16 +243,16 @@
             this.pnl_EnemyCard1.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnl_EnemyCard1.Location = new System.Drawing.Point(0, 0);
             this.pnl_EnemyCard1.Name = "pnl_EnemyCard1";
-            this.pnl_EnemyCard1.Size = new System.Drawing.Size(782, 46);
+            this.pnl_EnemyCard1.Size = new System.Drawing.Size(761, 90);
             this.pnl_EnemyCard1.TabIndex = 1;
             // 
             // pnl_PlayerCard
             // 
             this.pnl_PlayerCard.BackColor = System.Drawing.Color.Transparent;
             this.pnl_PlayerCard.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnl_PlayerCard.Location = new System.Drawing.Point(0, 67);
+            this.pnl_PlayerCard.Location = new System.Drawing.Point(0, 318);
             this.pnl_PlayerCard.Name = "pnl_PlayerCard";
-            this.pnl_PlayerCard.Size = new System.Drawing.Size(782, 37);
+            this.pnl_PlayerCard.Size = new System.Drawing.Size(761, 97);
             this.pnl_PlayerCard.TabIndex = 0;
             // 
             // pnl_GameOver
@@ -246,9 +264,9 @@
             this.pnl_GameOver.Controls.Add(this.btn_PlayAgain);
             this.pnl_GameOver.Controls.Add(this.pic_GameOver);
             this.pnl_GameOver.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnl_GameOver.Location = new System.Drawing.Point(0, 226);
+            this.pnl_GameOver.Location = new System.Drawing.Point(0, 537);
             this.pnl_GameOver.Name = "pnl_GameOver";
-            this.pnl_GameOver.Size = new System.Drawing.Size(782, 450);
+            this.pnl_GameOver.Size = new System.Drawing.Size(761, 450);
             this.pnl_GameOver.TabIndex = 2;
             this.pnl_GameOver.Visible = false;
             // 
@@ -295,7 +313,7 @@
             this.pic_GameOver.Image = global::ALP_UNO_Game.Properties.Resources.game_over;
             this.pic_GameOver.Location = new System.Drawing.Point(0, 0);
             this.pic_GameOver.Name = "pic_GameOver";
-            this.pic_GameOver.Size = new System.Drawing.Size(782, 450);
+            this.pic_GameOver.Size = new System.Drawing.Size(761, 450);
             this.pic_GameOver.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pic_GameOver.TabIndex = 0;
             this.pic_GameOver.TabStop = false;
@@ -307,9 +325,9 @@
             this.pnl_RulesAndCredits.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pnl_RulesAndCredits.Controls.Add(this.btn_BackButton);
             this.pnl_RulesAndCredits.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnl_RulesAndCredits.Location = new System.Drawing.Point(0, 676);
+            this.pnl_RulesAndCredits.Location = new System.Drawing.Point(0, 987);
             this.pnl_RulesAndCredits.Name = "pnl_RulesAndCredits";
-            this.pnl_RulesAndCredits.Size = new System.Drawing.Size(782, 308);
+            this.pnl_RulesAndCredits.Size = new System.Drawing.Size(761, 308);
             this.pnl_RulesAndCredits.TabIndex = 3;
             this.pnl_RulesAndCredits.Visible = false;
             this.pnl_RulesAndCredits.VisibleChanged += new System.EventHandler(this.pnl_RulesAndCredits_VisibleChanged);
@@ -352,6 +370,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.btn_StartButton)).EndInit();
             this.pnl_GamePanel.ResumeLayout(false);
             this.pnl_GamePanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_unoButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_CardDeck)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_TheCard)).EndInit();
             this.pnl_GameOver.ResumeLayout(false);
@@ -386,6 +405,7 @@
         private System.Windows.Forms.Label lbl_Score;
         private System.Windows.Forms.Panel pnl_RulesAndCredits;
         private System.Windows.Forms.PictureBox btn_BackButton;
+        private System.Windows.Forms.PictureBox btn_unoButton;
     }
 }
 

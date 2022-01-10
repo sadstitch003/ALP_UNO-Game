@@ -45,6 +45,7 @@ namespace ALP_UNO_Game
         public bool gameOver = false;
         public List<Player> playerList { get; set; }
         public List<Card> cardDeck { get; set; }
+        public bool unoButtonPressed = false;
 
         public void generateStartingDeck()
         {
@@ -177,6 +178,18 @@ namespace ALP_UNO_Game
             showPlayerCard();
             showEnemyCard();
 
+            btn_unoButton.Visible = false;
+            unoButtonPressed = false;
+
+            int tempPlayerNum = playerNum - 1;
+            if (tempPlayerNum < 0) tempPlayerNum = playerList.Count() - 1;
+            else if (tempPlayerNum >= playerList.Count()) tempPlayerNum = 0;
+
+            if (playerList[playerNum].playerCards.Count() == 2 || playerList[tempPlayerNum].playerCards.Count() == 1)
+            {
+                btn_unoButton.Visible = true;
+                btn_unoButton.Enabled = true;
+            }
 
             playerDrawCard = false;
             if (playerCannotPlay(playerList[playerNum].playerCards))
@@ -243,13 +256,13 @@ namespace ALP_UNO_Game
         }
 
         public bool playerDrawCard = false;
+        public bool prevUnoButtonPressed = false;
 
         public void endTurn()
         {
             gameOver = checkGameStatus();
             if (gameOver)
             {
-
                 int tempCardCount = 100;
                 for (int i = 0; i < playerList.Count(); i++)
                 {
@@ -292,6 +305,25 @@ namespace ALP_UNO_Game
             }
             else
             {
+                if (unoButtonPressed)
+                {
+                    int tempPlayerNum = playerNum - 1;
+                    if (tempPlayerNum < 0) tempPlayerNum = playerList.Count() - 1;
+                    else if (tempPlayerNum >= playerList.Count()) tempPlayerNum = 0;
+
+                    if (playerList[tempPlayerNum].playerCards.Count() == 1 && prevUnoButtonPressed == false)
+                    {
+                        MessageBox.Show($"Player {tempPlayerNum + 1} : Forgot to press UNO, Draw Two Cards !");
+                        drawCard(playerList[tempPlayerNum].playerCards, 2);
+                    }
+
+                    prevUnoButtonPressed = true;
+                }
+                else
+                {
+                    prevUnoButtonPressed = false;
+                }
+
                 if (playerDrawCard)
                 {
                     // SKIP
@@ -402,6 +434,8 @@ namespace ALP_UNO_Game
             this.pic_CardDeck.Size = new System.Drawing.Size(this.ClientSize.Width / 10, this.ClientSize.Height / 4);
             this.lbl_CardDeckCount.Location = new System.Drawing.Point((this.ClientSize.Width - this.ClientSize.Width / 4) / 2 + (this.ClientSize.Width / 60), (this.ClientSize.Height - this.ClientSize.Height / 3) / 2 + (this.ClientSize.Height / 4));
             this.lbl_CardDeckCount.Font = new System.Drawing.Font("Microsoft Sans Serif", (float)(this.ClientSize.Width / 100), System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_unoButton.Location = new System.Drawing.Point(this.ClientSize.Width - this.btn_unoButton.Width * 3 / 2, (this.ClientSize.Height + this.btn_unoButton.Height) / 2);
+            this.btn_unoButton.Size = new System.Drawing.Size(this.ClientSize.Width / 10, this.ClientSize.Height / 10);
         }
 
         private void pic_GameOver_VisibleChanged(object sender, EventArgs e)
@@ -449,6 +483,8 @@ namespace ALP_UNO_Game
                 this.pic_CardDeck.Size = new System.Drawing.Size(this.ClientSize.Width / 10, this.ClientSize.Height / 4);
                 this.lbl_CardDeckCount.Location = new System.Drawing.Point((this.ClientSize.Width - this.ClientSize.Width / 4) / 2 + (this.ClientSize.Width / 50), (this.ClientSize.Height - this.ClientSize.Height / 3) / 2 + (this.ClientSize.Height / 4));
                 this.lbl_CardDeckCount.Font = new System.Drawing.Font("Microsoft Sans Serif", (float)(this.ClientSize.Width / 100), System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                this.btn_unoButton.Location = new System.Drawing.Point(this.ClientSize.Width - this.btn_unoButton.Width * 3 / 2, (this.ClientSize.Height + this.btn_unoButton.Height) / 2);
+                this.btn_unoButton.Size = new System.Drawing.Size(this.ClientSize.Width / 10, this.ClientSize.Height / 10);
                 resetCardSetting();
             }
             else if (pnl_GameOver.Visible)
@@ -708,6 +744,28 @@ namespace ALP_UNO_Game
             pic_CardDeck.Top += 2;
             pic_CardDeck.Width -= 4;
             pic_CardDeck.Height -= 4;
+        }
+
+        private void btn_unoButton_Click(object sender, EventArgs e)
+        {
+            btn_unoButton.Enabled = false;
+            unoButtonPressed = true;
+        }
+
+        private void btn_unoButton_MouseHover(object sender, EventArgs e)
+        {
+            btn_unoButton.Left -= 4;
+            btn_unoButton.Top -= 4;
+            btn_unoButton.Width += 8;
+            btn_unoButton.Height += 8;
+        }
+
+        private void btn_unoButton_MouseLeave(object sender, EventArgs e)
+        {
+            btn_unoButton.Left += 4;
+            btn_unoButton.Top += 4;
+            btn_unoButton.Width -= 8;
+            btn_unoButton.Height -= 8;
         }
 
         #endregion
