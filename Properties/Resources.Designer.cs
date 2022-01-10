@@ -623,9 +623,9 @@ namespace ALP_UNO_Game.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap uno_btn {
+        internal static System.Drawing.Bitmap uno_button {
             get {
-                object obj = ResourceManager.GetObject("uno_btn", resourceCulture);
+                object obj = ResourceManager.GetObject("uno-button", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

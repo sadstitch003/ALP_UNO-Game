@@ -208,6 +208,9 @@
   <data name="yellow_7" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\yellow_7.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="green_7" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\green_7.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="background" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\background.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -261,9 +264,6 @@
   </data>
   <data name="green_5" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\green_5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="red_9" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\red_9.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="green_8" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\green_8.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -319,8 +319,8 @@
   <data name="yellow_reverse" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\yellow_reverse.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="green_7" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\green_7.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="red_9" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\red_9.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="red_6" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\red_6.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -346,7 +346,7 @@
   <data name="green_0" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\green_0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="uno_btn" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\uno_btn.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="uno-button" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\uno-button1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

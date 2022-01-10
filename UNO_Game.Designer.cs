@@ -42,6 +42,7 @@
             this.pic_CardDeck = new System.Windows.Forms.PictureBox();
             this.pic_TheCard = new System.Windows.Forms.PictureBox();
             this.pnl_EnemyCard1 = new System.Windows.Forms.Panel();
+            this.lbl_CurrentPlayer = new System.Windows.Forms.Label();
             this.pnl_PlayerCard = new System.Windows.Forms.Panel();
             this.pnl_GameOver = new System.Windows.Forms.Panel();
             this.lbl_Score = new System.Windows.Forms.Label();
@@ -50,7 +51,6 @@
             this.pic_GameOver = new System.Windows.Forms.PictureBox();
             this.pnl_RulesAndCredits = new System.Windows.Forms.Panel();
             this.btn_BackButton = new System.Windows.Forms.PictureBox();
-            this.lbl_CurrentPlayer = new System.Windows.Forms.Label();
             this.pnl_MainMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_UnoPicture)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_MenuPic)).BeginInit();
@@ -83,7 +83,7 @@
             this.pnl_MainMenu.Location = new System.Drawing.Point(0, 0);
             this.pnl_MainMenu.Name = "pnl_MainMenu";
             this.pnl_MainMenu.Padding = new System.Windows.Forms.Padding(0, 20, 10, 0);
-            this.pnl_MainMenu.Size = new System.Drawing.Size(761, 122);
+            this.pnl_MainMenu.Size = new System.Drawing.Size(824, 122);
             this.pnl_MainMenu.TabIndex = 0;
             // 
             // PlayButton
@@ -105,7 +105,7 @@
             this.pic_UnoPicture.Image = global::ALP_UNO_Game.Properties.Resources.uno_logo;
             this.pic_UnoPicture.Location = new System.Drawing.Point(406, 20);
             this.pic_UnoPicture.Name = "pic_UnoPicture";
-            this.pic_UnoPicture.Size = new System.Drawing.Size(345, 240);
+            this.pic_UnoPicture.Size = new System.Drawing.Size(408, 240);
             this.pic_UnoPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pic_UnoPicture.TabIndex = 4;
             this.pic_UnoPicture.TabStop = false;
@@ -183,7 +183,7 @@
             this.pnl_GamePanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnl_GamePanel.Location = new System.Drawing.Point(0, 122);
             this.pnl_GamePanel.Name = "pnl_GamePanel";
-            this.pnl_GamePanel.Size = new System.Drawing.Size(761, 415);
+            this.pnl_GamePanel.Size = new System.Drawing.Size(824, 415);
             this.pnl_GamePanel.TabIndex = 1;
             this.pnl_GamePanel.Visible = false;
             this.pnl_GamePanel.VisibleChanged += new System.EventHandler(this.pnl_GamePanel_VisibleChanged);
@@ -191,10 +191,10 @@
             // btn_unoButton
             // 
             this.btn_unoButton.BackColor = System.Drawing.Color.Transparent;
-            this.btn_unoButton.Image = global::ALP_UNO_Game.Properties.Resources.uno_btn;
-            this.btn_unoButton.Location = new System.Drawing.Point(614, 166);
+            this.btn_unoButton.Image = ((System.Drawing.Image)(resources.GetObject("btn_unoButton.Image")));
+            this.btn_unoButton.Location = new System.Drawing.Point(600, 164);
             this.btn_unoButton.Name = "btn_unoButton";
-            this.btn_unoButton.Size = new System.Drawing.Size(100, 50);
+            this.btn_unoButton.Size = new System.Drawing.Size(137, 50);
             this.btn_unoButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btn_unoButton.TabIndex = 5;
             this.btn_unoButton.TabStop = false;
@@ -246,8 +246,19 @@
             this.pnl_EnemyCard1.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnl_EnemyCard1.Location = new System.Drawing.Point(0, 0);
             this.pnl_EnemyCard1.Name = "pnl_EnemyCard1";
-            this.pnl_EnemyCard1.Size = new System.Drawing.Size(761, 90);
+            this.pnl_EnemyCard1.Size = new System.Drawing.Size(824, 90);
             this.pnl_EnemyCard1.TabIndex = 1;
+            // 
+            // lbl_CurrentPlayer
+            // 
+            this.lbl_CurrentPlayer.AutoSize = true;
+            this.lbl_CurrentPlayer.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_CurrentPlayer.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_CurrentPlayer.Location = new System.Drawing.Point(12, 15);
+            this.lbl_CurrentPlayer.Name = "lbl_CurrentPlayer";
+            this.lbl_CurrentPlayer.Size = new System.Drawing.Size(118, 32);
+            this.lbl_CurrentPlayer.TabIndex = 6;
+            this.lbl_CurrentPlayer.Text = "Player :";
             // 
             // pnl_PlayerCard
             // 
@@ -255,7 +266,7 @@
             this.pnl_PlayerCard.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.pnl_PlayerCard.Location = new System.Drawing.Point(0, 318);
             this.pnl_PlayerCard.Name = "pnl_PlayerCard";
-            this.pnl_PlayerCard.Size = new System.Drawing.Size(761, 97);
+            this.pnl_PlayerCard.Size = new System.Drawing.Size(824, 97);
             this.pnl_PlayerCard.TabIndex = 0;
             // 
             // pnl_GameOver
@@ -269,7 +280,7 @@
             this.pnl_GameOver.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnl_GameOver.Location = new System.Drawing.Point(0, 537);
             this.pnl_GameOver.Name = "pnl_GameOver";
-            this.pnl_GameOver.Size = new System.Drawing.Size(761, 450);
+            this.pnl_GameOver.Size = new System.Drawing.Size(824, 450);
             this.pnl_GameOver.TabIndex = 2;
             this.pnl_GameOver.Visible = false;
             // 
@@ -316,7 +327,7 @@
             this.pic_GameOver.Image = global::ALP_UNO_Game.Properties.Resources.game_over;
             this.pic_GameOver.Location = new System.Drawing.Point(0, 0);
             this.pic_GameOver.Name = "pic_GameOver";
-            this.pic_GameOver.Size = new System.Drawing.Size(761, 450);
+            this.pic_GameOver.Size = new System.Drawing.Size(824, 450);
             this.pic_GameOver.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pic_GameOver.TabIndex = 0;
             this.pic_GameOver.TabStop = false;
@@ -330,7 +341,7 @@
             this.pnl_RulesAndCredits.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnl_RulesAndCredits.Location = new System.Drawing.Point(0, 987);
             this.pnl_RulesAndCredits.Name = "pnl_RulesAndCredits";
-            this.pnl_RulesAndCredits.Size = new System.Drawing.Size(761, 308);
+            this.pnl_RulesAndCredits.Size = new System.Drawing.Size(824, 308);
             this.pnl_RulesAndCredits.TabIndex = 3;
             this.pnl_RulesAndCredits.Visible = false;
             this.pnl_RulesAndCredits.VisibleChanged += new System.EventHandler(this.pnl_RulesAndCredits_VisibleChanged);
@@ -350,23 +361,12 @@
             this.btn_BackButton.MouseLeave += new System.EventHandler(this.btn_BackButton_MouseLeave);
             this.btn_BackButton.MouseHover += new System.EventHandler(this.btn_BackButton_MouseHover);
             // 
-            // lbl_CurrentPlayer
-            // 
-            this.lbl_CurrentPlayer.AutoSize = true;
-            this.lbl_CurrentPlayer.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_CurrentPlayer.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_CurrentPlayer.Location = new System.Drawing.Point(12, 15);
-            this.lbl_CurrentPlayer.Name = "lbl_CurrentPlayer";
-            this.lbl_CurrentPlayer.Size = new System.Drawing.Size(118, 32);
-            this.lbl_CurrentPlayer.TabIndex = 6;
-            this.lbl_CurrentPlayer.Text = "Player :";
-            // 
             // Game
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(782, 1008);
+            this.ClientSize = new System.Drawing.Size(845, 1008);
             this.Controls.Add(this.pnl_RulesAndCredits);
             this.Controls.Add(this.pnl_GameOver);
             this.Controls.Add(this.pnl_GamePanel);

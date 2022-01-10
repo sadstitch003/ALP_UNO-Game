@@ -471,7 +471,6 @@ namespace ALP_UNO_Game
                 this.btn_RulesButton.Location = new System.Drawing.Point(this.ClientSize.Width * 3 / 4 - this.btn_StartButton.Width / 2, this.ClientSize.Height / 2 + this.btn_StartButton.Height * 2);
                 this.btn_CreditsButton.Size = new System.Drawing.Size(this.ClientSize.Width / 3, this.ClientSize.Height / 10);
                 this.btn_CreditsButton.Location = new System.Drawing.Point(this.ClientSize.Width * 3 / 4 - this.btn_StartButton.Width / 2, this.ClientSize.Height / 2 + this.btn_StartButton.Height * 3);
-
             }
             else if (pnl_GamePanel.Visible)
             {
@@ -517,18 +516,14 @@ namespace ALP_UNO_Game
 
         private void btn_StartButton_MouseHover(object sender, EventArgs e)
         {
-            btn_StartButton.Left -= 2;
-            btn_StartButton.Top -= 2;
-            btn_StartButton.Width += 4;
-            btn_StartButton.Height += 4;
+            this.btn_StartButton.Size = new System.Drawing.Size(this.ClientSize.Width / 3 + 4, this.ClientSize.Height / 10 + 4);
+            this.btn_StartButton.Location = new System.Drawing.Point(this.ClientSize.Width * 3 / 4 - this.btn_StartButton.Width / 2 - 2, this.ClientSize.Height / 2 + this.btn_StartButton.Height - 2);
         }
 
         private void btn_StartButton_MouseLeave(object sender, EventArgs e)
         {
-            btn_StartButton.Left += 2;
-            btn_StartButton.Top += 2;
-            btn_StartButton.Width -= 4;
-            btn_StartButton.Height -= 4;
+            this.btn_StartButton.Size = new System.Drawing.Size(this.ClientSize.Width / 3, this.ClientSize.Height / 10);
+            this.btn_StartButton.Location = new System.Drawing.Point(this.ClientSize.Width * 3 / 4 - this.btn_StartButton.Width / 2, this.ClientSize.Height / 2 + this.btn_StartButton.Height);
         }
 
         private void btn_StartButton_Click(object sender, EventArgs e)
@@ -544,18 +539,14 @@ namespace ALP_UNO_Game
 
         private void btn_RulesButton_MouseHover(object sender, EventArgs e)
         {
-            btn_RulesButton.Left -= 2;
-            btn_RulesButton.Top -= 2;
-            btn_RulesButton.Width += 4;
-            btn_RulesButton.Height += 4;
+            this.btn_RulesButton.Location = new System.Drawing.Point(this.ClientSize.Width * 3 / 4 - this.btn_StartButton.Width / 2 - 2, this.ClientSize.Height / 2 + this.btn_StartButton.Height * 2 - 2);
+            this.btn_RulesButton.Size = new System.Drawing.Size(this.ClientSize.Width / 3 + 4, this.ClientSize.Height / 10 + 4);
         }
 
         private void btn_RulesButton_MouseLeave(object sender, EventArgs e)
         {
-            btn_RulesButton.Left += 2;
-            btn_RulesButton.Top += 2;
-            btn_RulesButton.Width -= 4;
-            btn_RulesButton.Height -= 4;
+            this.btn_RulesButton.Location = new System.Drawing.Point(this.ClientSize.Width * 3 / 4 - this.btn_StartButton.Width / 2, this.ClientSize.Height / 2 + this.btn_StartButton.Height * 2);
+            this.btn_RulesButton.Size = new System.Drawing.Size(this.ClientSize.Width / 3, this.ClientSize.Height / 10);
         }
 
         private void btn_RulesButton_Click(object sender, EventArgs e)
@@ -567,18 +558,14 @@ namespace ALP_UNO_Game
 
         private void btn_CreditsButton_MouseHover(object sender, EventArgs e)
         {
-            btn_CreditsButton.Left -= 2;
-            btn_CreditsButton.Top -= 2;
-            btn_CreditsButton.Width += 4;
-            btn_CreditsButton.Height += 4;
+            this.btn_CreditsButton.Size = new System.Drawing.Size(this.ClientSize.Width / 3 + 4, this.ClientSize.Height / 10 + 4);
+            this.btn_CreditsButton.Location = new System.Drawing.Point(this.ClientSize.Width * 3 / 4 - this.btn_StartButton.Width / 2 - 2, this.ClientSize.Height / 2 + this.btn_StartButton.Height * 3 - 2);
         }
 
         private void btn_CreditsButton_MouseLeave(object sender, EventArgs e)
         {
-            btn_CreditsButton.Left += 2;
-            btn_CreditsButton.Top += 2;
-            btn_CreditsButton.Width -= 4;
-            btn_CreditsButton.Height -= 4;
+            this.btn_CreditsButton.Size = new System.Drawing.Size(this.ClientSize.Width / 3, this.ClientSize.Height / 10);
+            this.btn_CreditsButton.Location = new System.Drawing.Point(this.ClientSize.Width * 3 / 4 - this.btn_StartButton.Width / 2, this.ClientSize.Height / 2 + this.btn_StartButton.Height * 3);
         }
 
         private void btn_CreditsButton_Click(object sender, EventArgs e)
@@ -780,15 +767,13 @@ namespace ALP_UNO_Game
 
         private void btn_PlayAgain_MouseHover(object sender, EventArgs e)
         {
-            btn_PlayAgain.Left -= 2;
-            btn_PlayAgain.Top -= 2;
+            btn_PlayAgain.Location = new System.Drawing.Point((this.ClientSize.Width - this.btn_PlayAgain.Width) / 2 - 2, this.ClientSize.Height / 2 + this.btn_StartButton.Height * 2 + 20 - 2);
             btn_PlayAgain.Size = new System.Drawing.Size(this.btn_PlayAgain.Width + 4, this.btn_PlayAgain.Height + 4);
         }
 
         private void btn_PlayAgain_MouseLeave(object sender, EventArgs e)
         {
-            btn_PlayAgain.Left += 2;
-            btn_PlayAgain.Top += 2;
+            btn_PlayAgain.Location = new System.Drawing.Point((this.ClientSize.Width - this.btn_PlayAgain.Width) / 2, this.ClientSize.Height / 2 + this.btn_StartButton.Height * 2 + 20);
             btn_PlayAgain.Size = new System.Drawing.Size(this.btn_PlayAgain.Width - 4, this.btn_PlayAgain.Height - 4);
         }
  
@@ -800,18 +785,14 @@ namespace ALP_UNO_Game
 
         private void btn_BackButton_MouseHover(object sender, EventArgs e)
         {
-            btn_BackButton.Left -= 2;
-            btn_BackButton.Top -= 2;
-            btn_BackButton.Height += 4;
-            btn_BackButton.Width += 4;
+            btn_BackButton.Location = new System.Drawing.Point(this.ClientSize.Width - this.btn_BackButton.Width * 2 - 2, this.ClientSize.Height - this.btn_BackButton.Width * 5 / 4 - 2);
+            btn_BackButton.Size = new System.Drawing.Size(54, 54);
         }
 
         private void btn_BackButton_MouseLeave(object sender, EventArgs e)
         {
-            btn_BackButton.Left -= 2;
-            btn_BackButton.Top -= 2;
-            btn_BackButton.Height += 4;
-            btn_BackButton.Width += 4;
+            this.btn_BackButton.Location = new System.Drawing.Point(this.ClientSize.Width - this.btn_BackButton.Width * 2, this.ClientSize.Height - this.btn_BackButton.Width * 5 / 4);
+            btn_BackButton.Size = new System.Drawing.Size(50, 50);
         }
 
         #endregion
