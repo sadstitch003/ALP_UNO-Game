@@ -173,6 +173,7 @@ namespace ALP_UNO_Game
 
         public void playGame()
         {
+            lbl_CurrentPlayer.Text = $"Player {playerNum + 1}";
             MessageBox.Show($"Player {playerNum + 1}'s Turn");
             sortPlayerCard();
             showPlayerCard();

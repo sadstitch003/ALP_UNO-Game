@@ -50,6 +50,7 @@
             this.pic_GameOver = new System.Windows.Forms.PictureBox();
             this.pnl_RulesAndCredits = new System.Windows.Forms.Panel();
             this.btn_BackButton = new System.Windows.Forms.PictureBox();
+            this.lbl_CurrentPlayer = new System.Windows.Forms.Label();
             this.pnl_MainMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_UnoPicture)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_MenuPic)).BeginInit();
@@ -60,6 +61,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.btn_unoButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_CardDeck)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_TheCard)).BeginInit();
+            this.pnl_EnemyCard1.SuspendLayout();
             this.pnl_GameOver.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btn_PlayAgain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_GameOver)).BeginInit();
@@ -240,6 +242,7 @@
             // pnl_EnemyCard1
             // 
             this.pnl_EnemyCard1.BackColor = System.Drawing.Color.Transparent;
+            this.pnl_EnemyCard1.Controls.Add(this.lbl_CurrentPlayer);
             this.pnl_EnemyCard1.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnl_EnemyCard1.Location = new System.Drawing.Point(0, 0);
             this.pnl_EnemyCard1.Name = "pnl_EnemyCard1";
@@ -347,6 +350,17 @@
             this.btn_BackButton.MouseLeave += new System.EventHandler(this.btn_BackButton_MouseLeave);
             this.btn_BackButton.MouseHover += new System.EventHandler(this.btn_BackButton_MouseHover);
             // 
+            // lbl_CurrentPlayer
+            // 
+            this.lbl_CurrentPlayer.AutoSize = true;
+            this.lbl_CurrentPlayer.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_CurrentPlayer.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_CurrentPlayer.Location = new System.Drawing.Point(12, 15);
+            this.lbl_CurrentPlayer.Name = "lbl_CurrentPlayer";
+            this.lbl_CurrentPlayer.Size = new System.Drawing.Size(118, 32);
+            this.lbl_CurrentPlayer.TabIndex = 6;
+            this.lbl_CurrentPlayer.Text = "Player :";
+            // 
             // Game
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -373,6 +387,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.btn_unoButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_CardDeck)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_TheCard)).EndInit();
+            this.pnl_EnemyCard1.ResumeLayout(false);
+            this.pnl_EnemyCard1.PerformLayout();
             this.pnl_GameOver.ResumeLayout(false);
             this.pnl_GameOver.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btn_PlayAgain)).EndInit();
@@ -406,6 +422,7 @@
         private System.Windows.Forms.Panel pnl_RulesAndCredits;
         private System.Windows.Forms.PictureBox btn_BackButton;
         private System.Windows.Forms.PictureBox btn_unoButton;
+        private System.Windows.Forms.Label lbl_CurrentPlayer;
     }
 }
 
