@@ -274,14 +274,14 @@ namespace ALP_UNO_Game
                             playerList[i].score += card.score;
                     }
 
-                    if (playerList[i].playerCards.Count() == tempCardCount)
-                        lbl_Winner.Text = "DRAW";
-                    else if (playerList[i].playerCards.Count() < tempCardCount)
+                    if (playerList[i].playerCards.Count() < tempCardCount)
                     {
                         tempCardCount = playerList[i].playerCards.Count();
                         lbl_Winner.Text = $"Winner : Player {i + 1}";
                         lbl_Score.Text = $"Score   : {playerList[i].score}";
                     }
+                    else if (playerList[i].playerCards.Count() == tempCardCount)
+                        lbl_Winner.Text = "DRAW";
                 }
 
                 int tempTopScore = 0;
