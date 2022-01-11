@@ -720,18 +720,14 @@ namespace ALP_UNO_Game
 
         private void pic_CardDeck_MouseHover(object sender, EventArgs e)
         {
-            pic_CardDeck.Left -= 2;
-            pic_CardDeck.Top -= 2;
-            pic_CardDeck.Width += 4;
-            pic_CardDeck.Height += 4;
+            pic_CardDeck.Location = new System.Drawing.Point((this.ClientSize.Width - this.ClientSize.Width / 4) / 2 - 2, (this.ClientSize.Height - this.ClientSize.Height / 3) / 2 - 2);
+            pic_CardDeck.Size = new System.Drawing.Size(this.ClientSize.Width / 10 + 4, this.ClientSize.Height / 4 + 4);
         }
 
         private void pic_CardDeck_MouseLeave(object sender, EventArgs e)
         {
-            pic_CardDeck.Left += 2;
-            pic_CardDeck.Top += 2;
-            pic_CardDeck.Width -= 4;
-            pic_CardDeck.Height -= 4;
+            pic_CardDeck.Location = new System.Drawing.Point((this.ClientSize.Width - this.ClientSize.Width / 4) / 2, (this.ClientSize.Height - this.ClientSize.Height / 3) / 2);
+            pic_CardDeck.Size = new System.Drawing.Size(this.ClientSize.Width / 10, this.ClientSize.Height / 4);
         }
 
         private void btn_unoButton_Click(object sender, EventArgs e)
@@ -742,18 +738,14 @@ namespace ALP_UNO_Game
 
         private void btn_unoButton_MouseHover(object sender, EventArgs e)
         {
-            btn_unoButton.Left -= 4;
-            btn_unoButton.Top -= 4;
-            btn_unoButton.Width += 8;
-            btn_unoButton.Height += 8;
+            btn_unoButton.Location = new System.Drawing.Point(this.ClientSize.Width - this.btn_unoButton.Width * 3 / 2 - 2, (this.ClientSize.Height + this.btn_unoButton.Height) / 2 - 2);
+            btn_unoButton.Size = new System.Drawing.Size(this.ClientSize.Width / 10 + 4, this.ClientSize.Height / 10 + 4);
         }
 
         private void btn_unoButton_MouseLeave(object sender, EventArgs e)
         {
-            btn_unoButton.Left += 4;
-            btn_unoButton.Top += 4;
-            btn_unoButton.Width -= 8;
-            btn_unoButton.Height -= 8;
+            btn_unoButton.Location = new System.Drawing.Point(this.ClientSize.Width - this.btn_unoButton.Width * 3 / 2, (this.ClientSize.Height + this.btn_unoButton.Height) / 2);
+            btn_unoButton.Size = new System.Drawing.Size(this.ClientSize.Width / 10, this.ClientSize.Height / 10);
         }
 
         #endregion

@@ -83,7 +83,7 @@
             this.pnl_MainMenu.Location = new System.Drawing.Point(0, 0);
             this.pnl_MainMenu.Name = "pnl_MainMenu";
             this.pnl_MainMenu.Padding = new System.Windows.Forms.Padding(0, 20, 10, 0);
-            this.pnl_MainMenu.Size = new System.Drawing.Size(824, 122);
+            this.pnl_MainMenu.Size = new System.Drawing.Size(824, 231);
             this.pnl_MainMenu.TabIndex = 0;
             // 
             // PlayButton
@@ -117,7 +117,7 @@
             this.pic_MenuPic.Image = ((System.Drawing.Image)(resources.GetObject("pic_MenuPic.Image")));
             this.pic_MenuPic.Location = new System.Drawing.Point(0, 20);
             this.pic_MenuPic.Name = "pic_MenuPic";
-            this.pic_MenuPic.Size = new System.Drawing.Size(406, 102);
+            this.pic_MenuPic.Size = new System.Drawing.Size(406, 211);
             this.pic_MenuPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pic_MenuPic.TabIndex = 3;
             this.pic_MenuPic.TabStop = false;
@@ -181,7 +181,7 @@
             this.pnl_GamePanel.Controls.Add(this.pnl_EnemyCard1);
             this.pnl_GamePanel.Controls.Add(this.pnl_PlayerCard);
             this.pnl_GamePanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnl_GamePanel.Location = new System.Drawing.Point(0, 122);
+            this.pnl_GamePanel.Location = new System.Drawing.Point(0, 231);
             this.pnl_GamePanel.Name = "pnl_GamePanel";
             this.pnl_GamePanel.Size = new System.Drawing.Size(824, 415);
             this.pnl_GamePanel.TabIndex = 1;
@@ -278,7 +278,7 @@
             this.pnl_GameOver.Controls.Add(this.btn_PlayAgain);
             this.pnl_GameOver.Controls.Add(this.pic_GameOver);
             this.pnl_GameOver.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnl_GameOver.Location = new System.Drawing.Point(0, 537);
+            this.pnl_GameOver.Location = new System.Drawing.Point(0, 646);
             this.pnl_GameOver.Name = "pnl_GameOver";
             this.pnl_GameOver.Size = new System.Drawing.Size(824, 450);
             this.pnl_GameOver.TabIndex = 2;
@@ -339,7 +339,7 @@
             this.pnl_RulesAndCredits.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pnl_RulesAndCredits.Controls.Add(this.btn_BackButton);
             this.pnl_RulesAndCredits.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnl_RulesAndCredits.Location = new System.Drawing.Point(0, 987);
+            this.pnl_RulesAndCredits.Location = new System.Drawing.Point(0, 1096);
             this.pnl_RulesAndCredits.Name = "pnl_RulesAndCredits";
             this.pnl_RulesAndCredits.Size = new System.Drawing.Size(824, 308);
             this.pnl_RulesAndCredits.TabIndex = 3;
